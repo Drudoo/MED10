@@ -8,12 +8,13 @@ public class OnClick : MonoBehaviour {
 
 		private string Info;
 
-		private string username="Enter Username";
-		private string password="";
+		private string username;
+		private string password;
 
 		public void showWindow(string newInfo) {
 			Info = newInfo;
-
+			username="Enter Username";
+			password="";
 
 			PopUp = true;
 		}
@@ -41,6 +42,7 @@ public class OnClick : MonoBehaviour {
 					if(GUI.Button(save,"Save")) {
 						Debug.Log("Username: " + username);
 						Debug.Log("Password: " + password);
+						PopUp = false;
 					}
 
 			}
