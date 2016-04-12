@@ -15,6 +15,13 @@ public class OnClick : MonoBehaviour {
 		private Button _eduB;
 		private Button _stuB;
 
+        private float h,w;
+
+        void Start() {
+            h = Screen.height;
+            w = Screen.width;
+        }
+
 		public void showWindow(string newInfo) {
 			Info = newInfo;
 			username="Enter Username";
@@ -27,12 +34,13 @@ public class OnClick : MonoBehaviour {
 		}
 
 		void OnGUI() {
-			Rect rect = new Rect (1084/2-300/2,275, 300, 130);
-			Rect close = new Rect (1084/2-300/2+280,275,20,20);
-			Rect usr = new Rect(1084/2-300/2+50, 300, 200, 20);
-			Rect pwd = new Rect(1084/2-300/2+50, 330, 200, 20);
 
-			Rect save = new Rect(1084/2-300/2+100, 360, 100, 20);
+			Rect rect = new Rect (w/2-300/2,h/2, 300, 130);
+			Rect close = new Rect (w/2-300/2+280,h/2,20,20);
+			Rect usr = new Rect(w/2-300/2+50, h/2+25, 200, 20);
+			Rect pwd = new Rect(w/2-300/2+50, h/2+55, 200, 20);
+
+			Rect save = new Rect(w/2-300/2+100, h/2+85, 100, 20);
 
 			if (PopUp) {
 					_eduB.interactable = false;

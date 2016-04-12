@@ -22,7 +22,7 @@ public class ButtonScript : MonoBehaviour {
 	void OnGUI() {
 		GUI.BeginGroup (new Rect (x, y, 100, 100));
 		GUI.Box (new Rect (0,0,100,100), "Group is here");
-    	GUI.Button (new Rect (10,40,80,30), _image);
+    	GUI.Button (new Rect (10,40,500,500), _image);
 		GUI.EndGroup();
 	}
 }

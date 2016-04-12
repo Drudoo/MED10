@@ -1,13 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class aspectRatio : MonoBehaviour {
 
-	public float aspectX = 4f;
-	public float aspectY = 3f;
-
+	private float aspectX;
+	private float aspectY;
+	public bool square;
 	// Use this for initialization
 	void Start () {
+		Screen.sleepTimeout = SleepTimeout.NeverSleep;
+		if (!square) {
+			aspectX = 16f;
+			aspectY = 9f;
+		} else {
+			aspectX = 4f;
+			aspectY = 3f;
+		}
 		// set the desired aspect ratio
 		float targetaspect = aspectX / aspectY;
 		// determine the game window's current aspect ratio

@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\ButtonScript.cs" />
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
      <Compile Include="Assets\Scripts\OnClick.cs" />
+     <Compile Include="Assets\Scripts\QuizGame.cs" />
      <Compile Include="Assets\Scripts\aspectRatio.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
