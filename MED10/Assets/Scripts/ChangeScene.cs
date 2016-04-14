@@ -6,6 +6,11 @@ public class ChangeScene : MonoBehaviour {
 
 	// Update is called once per frame
 	public void ChangeToScene (string sceneToChangeTo) {
+		Debug.Log("Load: " + sceneToChangeTo);
+
 		SceneManager.LoadScene(sceneToChangeTo);
+	}
+	public void writeToLog() {
+		Debug.Log("shits working");
 	}
 }

@@ -30,11 +30,13 @@ public class AndroidDialog : MonoBehaviour {
   if (mYesPressed) {
    GUI.Label(new Rect((Screen.width-ButtonWidth)/2, (Screen.height-ButtonHeight)/2 + 2 * ButtonHeight,
                       ButtonWidth, ButtonHeight), "You Pressed Yes");
+                      Debug.Log("YESSSSSS");
   }
 
   if (mNoPressed) {
    GUI.Label(new Rect((Screen.width-ButtonWidth)/2, (Screen.height-ButtonHeight)/2 + 2 * ButtonHeight,
                       ButtonWidth, ButtonHeight), "You Pressed No");
+                      Debug.Log("NOOOOO");
   }
  }
 
