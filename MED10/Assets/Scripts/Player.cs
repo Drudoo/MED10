@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.CrossPlatformInput;
 
 [RequireComponent (typeof (Controller2D))]
 public class Player : MonoBehaviour {
-	
+
 	public float maxJumpHeight = 6;
 	public float minJumpHeight = 1;
 	public float timeToJumpApex = 0.4f;
@@ -72,7 +73,10 @@ public class Player : MonoBehaviour {
 
 	void Update() {
 
-		Vector2 input = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
+		//Vector2 input = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
+
+		Vector2 input = new Vector2 (CrossPlatformInputManager.GetAxisRaw("Horizontal"), CrossPlatformInputManager.GetAxisRaw("Vertical"));
+
 		int wallDirX = (controller.collisions.left) ? -1 : 1;
 
 		bool wallSliding = false;
@@ -104,14 +108,14 @@ public class Player : MonoBehaviour {
 
 
 		/*
-		Ray ray = viewCamera.ScreenPointToRay (Input.mousePosition); 
+		Ray ray = viewCamera.ScreenPointToRay (Input.mousePosition);
 		Vector3 point = ray.GetPoint(
 		Debug.DrawLine (ray.origin, transform.position, Color.green);
 
 		controller.LookAt (ray);
 		*/
 
-		/*Ray ray = viewCamera.ScreenPointToRay (Input.mousePosition); 
+		/*Ray ray = viewCamera.ScreenPointToRay (Input.mousePosition);
 		Vector3 point = ray.origin;
 
 
@@ -122,7 +126,7 @@ public class Player : MonoBehaviour {
 		//Debug.DrawRay(ray.origin,ray.direction * 100,Color.red);
 		transform.LookAt(point);
 		*/
-		Vector3 point = viewCamera.ScreenToWorldPoint (Input.mousePosition); 
+		Vector3 point = viewCamera.ScreenToWorldPoint (Input.mousePosition);
 		Vector3 distance = point - transform.position;
 		//bool faceLeft = false;
 		//bool faceRight = true;
@@ -156,7 +160,7 @@ public class Player : MonoBehaviour {
 		//}
 
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		if (Input.GetKeyDown (KeyCode.Space) || CrossPlatformInputManager.GetButton("Jump")) {
 			if (wallSliding) {
 				if (wallDirX == input.x) {
 					velocity.x = -wallDirX * wallJumpClimb.x;
@@ -171,7 +175,7 @@ public class Player : MonoBehaviour {
 			}
 
 			if (controller.collisions.below) {
-				velocity.y = maxJumpVelocity;			
+				velocity.y = maxJumpVelocity;
 			}
 		}
 
@@ -180,7 +184,7 @@ public class Player : MonoBehaviour {
 				velocity.y = minJumpVelocity;
 			}
 		}
-	
+
 
 		//Debug.Log (GetComponent<Rigidbody2D> ().mass);
 		//float targetVelocityX = input.x * moveSpeed * groundType*massX;
