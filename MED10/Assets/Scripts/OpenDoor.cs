@@ -12,28 +12,51 @@ public class OpenDoor : MonoBehaviour {
 
 	private bool questionAsked = false;
 
+	private string device = "";
+
 	private Collider2D _col;
 
 	void Start () {
 		buttonStartPosition = button.transform.localPosition;
+		#if UNITY_EDITOR
+			device = "UNITY_EDITOR";
+    	#endif
+
+		if (device == "") {
+			#if UNITY_ANDROID
+				device = "UNITY_ANDROID";
+			#endif
+		}
+
+		Debug.Log("Device: " + device);
+
 	}
 
 	void OnTriggerStay2D(Collider2D col) {
-		if (col.tag == "Player" && !questionAsked) {
+		if (col.tag == "Player") {
 			_col = col;
-			askQuestion.showQuestion();
-			questionAsked = true;
-
+			if (device == "UNITY_EDITOR") {
+				DepressButton(col.transform.localScale.x);
+			} else if (device == "UNITY_ANDROID") {
+				if (!questionAsked) {
+					askQuestion.showQuestion();
+				}
+				questionAsked = true;
+			}
 		}
 	}
 
 	void Update() {
-		if (questionAsked) {
+		if (device == "UNITY_ANDROID") {
 			if (askQuestion.correct) {
 				DepressButton(_col.transform.localScale.x);
-			} else {
-				Debug.Log("Wrong Answer");
 			}
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D col) {
+		if (col.tag == "Player" && questionAsked && !askQuestion.correct) {
+			questionAsked = false;
 		}
 	}
 

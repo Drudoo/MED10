@@ -34,6 +34,7 @@ public class AskQuestion : MonoBehaviour {
 		}
 		if (a_pressed) {
 			Debug.Log("A Pressed");
+			Debug.Log(answerA + " " + rightAnswer);
 			if (answerA == rightAnswer) {
 				correct = true;
 			}
@@ -41,6 +42,7 @@ public class AskQuestion : MonoBehaviour {
 		}
 		if (b_pressed) {
 			Debug.Log("B Pressed");
+			Debug.Log(answerB + " " + rightAnswer);
 			if (answerB == rightAnswer) {
 				correct = true;
 			}
@@ -48,6 +50,7 @@ public class AskQuestion : MonoBehaviour {
 		}
 		if (c_pressed) {
 			Debug.Log("C Pressed");
+			Debug.Log(answerC + " " + rightAnswer);
 			if (answerC == rightAnswer) {
 				correct = true;
 			}
