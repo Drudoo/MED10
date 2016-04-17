@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using System.IO;
 
 public class QuizGame : MonoBehaviour {
 
 	private InputField _questions;
 	private InputField _answers;
+
+	[HideInInspector]
+	public int _valueQ;
+	[HideInInspector]
+	public int _valueA;
+
 	string[] objects = {"Question", "Save", "OptionA", "OptionB", "OptionC", "OptionD", "OptionE", "OptionF", "OptionG"};
 
 	void Start() {
@@ -29,8 +34,11 @@ public class QuizGame : MonoBehaviour {
 	}
 
 	private void MakeTable(InputField _questions, InputField _answers) {
-		int _valueQ = int.Parse(_questions.text);
-		int _valueA = int.Parse(_answers.text);
+		_valueQ = int.Parse(_questions.text);
+		_valueA = int.Parse(_answers.text);
+
+		_questions.text = "";
+		_answers.text = "";
 
 		Debug.Log("Q: " + _valueQ + " A: " + _valueA);
 
