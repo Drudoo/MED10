@@ -31,7 +31,7 @@ public class Controller2D : RaycastController {
 			DescendSlope(ref velocity);
 		}
 
-		if (velocity.x != 0) { //check for horizontal collision even if we dont have a movement 
+		if (velocity.x != 0) { //check for horizontal collision even if we dont have a movement
 			collisions.faceDir = (int)Mathf.Sign(velocity.x);
 		}
 

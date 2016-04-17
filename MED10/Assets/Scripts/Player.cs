@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.UI;
 
 [RequireComponent (typeof (Controller2D))]
 public class Player : MonoBehaviour {
@@ -14,6 +14,11 @@ public class Player : MonoBehaviour {
 	float accelerationTimeGrounded = .1f;
 	float moveSpeed = 6;
 
+	private bool up_isDown;
+	private bool down_isDown;
+	private bool left_isDown;
+	private bool right_isDown;
+	private bool jump_isDown;
 
 	public Vector2 wallJumpClimb = new Vector2(7.5f,25.0f);
 	public Vector2 wallJumpOff = new Vector2(8.5f,7.0f);
@@ -51,7 +56,23 @@ public class Player : MonoBehaviour {
 	Camera viewCamera;
 	float direction;
 
+	public Button _left;
+
+	private d_pad buttonUp;
+	private d_pad buttonDown;
+	private d_pad buttonLeft;
+	private d_pad buttonRight;
+	private d_pad buttonJump;
+	private float dirH = 0.0f;
+	private float dirV = 0.0f;
+
 	void Start() {
+
+		buttonUp = GameObject.Find("Up").GetComponent<d_pad>();
+		buttonDown = GameObject.Find("Down").GetComponent<d_pad>();
+		buttonLeft = GameObject.Find("Left").GetComponent<d_pad>();
+		buttonRight = GameObject.Find("Right").GetComponent<d_pad>();
+		buttonJump = GameObject.Find("Jump").GetComponent<d_pad>();
 
 		controller = GetComponent<Controller2D> ();
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
@@ -69,13 +90,49 @@ public class Player : MonoBehaviour {
 
 	}
 
-
-
 	void Update() {
 
+		up_isDown = buttonUp.getButtonState ();
+		down_isDown = buttonDown.getButtonState ();
+		left_isDown = buttonLeft.getButtonState ();
+		right_isDown = buttonRight.getButtonState ();
+		jump_isDown = buttonJump.getButtonState ();
+
+		if (left_isDown) {
+			dirH = -1.0f;
+			//Debug.Log("left");
+		} else if (right_isDown) {
+			dirH = 1.0f;
+			//Debug.Log("right");
+		} else {
+			dirH = 0.0f;
+		}
+
+		if (down_isDown) {
+			dirV = -1.0f;
+		} else {
+			dirV = 0.0f;
+		}
+
+/*
+		if (Input.touches.Length <= 0) {
+
+		} else {
+			for (int i=0; i < Input.touchCount; i++) {
+				if (_left.HitTest(Input.GetTouch(i).position)){
+					if (Input.GetTouch(i).phase == TouchPhase.Began) {
+						Debug.Log("left");
+					}
+				}
+			}
+		}
+*/
 		//Vector2 input = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 
-		Vector2 input = new Vector2 (CrossPlatformInputManager.GetAxisRaw("Horizontal"), CrossPlatformInputManager.GetAxisRaw("Vertical"));
+		Vector2 input = new Vector2 (dirH, dirV);
+		//Debug.Log(input);
+
+		//Vector2 input = new Vector2 (CrossPlatformInputManager.GetAxisRaw("Horizontal"), CrossPlatformInputManager.GetAxisRaw("Vertical"));
 
 		int wallDirX = (controller.collisions.left) ? -1 : 1;
 
@@ -160,7 +217,7 @@ public class Player : MonoBehaviour {
 		//}
 
 
-		if (Input.GetKeyDown (KeyCode.Space) || CrossPlatformInputManager.GetButton("Jump")) {
+		if (Input.GetKeyDown (KeyCode.Space) || jump_isDown) {
 			if (wallSliding) {
 				if (wallDirX == input.x) {
 					velocity.x = -wallDirX * wallJumpClimb.x;
@@ -179,7 +236,7 @@ public class Player : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKeyUp (KeyCode.Space)) {
+		if (Input.GetKeyUp (KeyCode.Space) || !jump_isDown) {
 			if (velocity.y > minJumpVelocity) {
 				velocity.y = minJumpVelocity;
 			}
@@ -215,6 +272,7 @@ public class Player : MonoBehaviour {
 		if (controller.collisions.above || controller.collisions.below) {
 			velocity.y = 0;
 		}
+
 	}
 
 	void OnTriggerEnter2D(Collider2D Hit)
@@ -231,5 +289,4 @@ public class Player : MonoBehaviour {
 		velocity.y = velocity.y * dragForceAirY;
 		inWater = false;
 	}
-
 }
