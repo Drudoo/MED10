@@ -58,6 +58,8 @@ public class Player : MonoBehaviour {
 
 	public Button _left;
 
+	private Vector2 input;
+
 	private d_pad buttonUp;
 	private d_pad buttonDown;
 	private d_pad buttonLeft;
@@ -127,9 +129,14 @@ public class Player : MonoBehaviour {
 			}
 		}
 */
-		//Vector2 input = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 
-		Vector2 input = new Vector2 (dirH, dirV);
+		#if UNITY_EDITOR
+			input = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
+			//Debug.Log("EDITOR");
+		#elif UNITY_ANDROID
+			input = new Vector2 (dirH, dirV);
+			//Debug.Log("ANDROID");
+		#endif
 		//Debug.Log(input);
 
 		//Vector2 input = new Vector2 (CrossPlatformInputManager.GetAxisRaw("Horizontal"), CrossPlatformInputManager.GetAxisRaw("Vertical"));
@@ -216,8 +223,8 @@ public class Player : MonoBehaviour {
 		//	velocity.x+=wind;
 		//}
 
-
-		if (Input.GetKeyDown (KeyCode.Space) || jump_isDown) {
+		#if UNITY_EDITOR
+		if (Input.GetKeyDown (KeyCode.Space)) {
 			if (wallSliding) {
 				if (wallDirX == input.x) {
 					velocity.x = -wallDirX * wallJumpClimb.x;
@@ -236,12 +243,38 @@ public class Player : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKeyUp (KeyCode.Space) || !jump_isDown) {
+		if (Input.GetKeyUp (KeyCode.Space)) {
 			if (velocity.y > minJumpVelocity) {
 				velocity.y = minJumpVelocity;
 			}
 		}
+		#elif UNITY_ANDROID
+		Debug.Log("ANDROID!");
+		if (jump_isDown) {
+			if (wallSliding) {
+				if (wallDirX == input.x) {
+					velocity.x = -wallDirX * wallJumpClimb.x;
+					velocity.y = wallJumpClimb.y;
+				} else if (input.x == 0) {
+					velocity.x = -wallDirX * wallJumpOff.x;
+					velocity.y = wallJumpOff.y;
+				} else {
+					velocity.x = -wallDirX * wallLeap.x;
+					velocity.y = wallLeap.y;
+				}
+			}
 
+			if (controller.collisions.below) {
+				velocity.y = maxJumpVelocity;
+			}
+		}
+
+		if (!jump_isDown) {
+			if (velocity.y > minJumpVelocity) {
+				velocity.y = minJumpVelocity;
+			}
+		}
+		#endif
 
 		//Debug.Log (GetComponent<Rigidbody2D> ().mass);
 		//float targetVelocityX = input.x * moveSpeed * groundType*massX;
@@ -279,7 +312,6 @@ public class Player : MonoBehaviour {
 	{
 		velocity.x = velocity.x * dragForceWaterX;
 		velocity.y = velocity.y * dragForceWaterY;
-
 		inWater = true;
 	}
 

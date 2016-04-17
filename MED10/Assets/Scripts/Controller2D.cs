@@ -8,6 +8,8 @@ public class Controller2D : RaycastController {
 
 	public CollisionInfo collisions;
 
+	public bool standingOnButton;
+
 	[HideInInspector]
 	public Vector2 playerInput;
 
@@ -128,7 +130,7 @@ public class Controller2D : RaycastController {
 						continue;
 					}
 				}
-
+				
 				velocity.y = (hit.distance - skinWidth) * directionY;
 				rayLength = hit.distance;
 
