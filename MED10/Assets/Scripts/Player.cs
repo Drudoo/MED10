@@ -249,7 +249,7 @@ public class Player : MonoBehaviour {
 			}
 		}
 		#elif UNITY_ANDROID
-		Debug.Log("ANDROID!");
+		//Debug.Log("ANDROID!");
 		if (jump_isDown) {
 			if (wallSliding) {
 				if (wallDirX == input.x) {

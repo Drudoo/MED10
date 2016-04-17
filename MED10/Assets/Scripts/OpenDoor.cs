@@ -7,16 +7,33 @@ public class OpenDoor : MonoBehaviour {
 	public GameObject button;
 	private Vector3 buttonStartPosition;
 	public Controller2D player;
-
+	public AskQuestion askQuestion;
 	public bool Activated = false;
+
+	private bool questionAsked = false;
+
+	private Collider2D _col;
 
 	void Start () {
 		buttonStartPosition = button.transform.localPosition;
 	}
 
 	void OnTriggerStay2D(Collider2D col) {
-		if (col.tag == "Player") {
-			DepressButton(col.transform.localScale.x);
+		if (col.tag == "Player" && !questionAsked) {
+			_col = col;
+			askQuestion.showQuestion();
+			questionAsked = true;
+
+		}
+	}
+
+	void Update() {
+		if (questionAsked) {
+			if (askQuestion.correct) {
+				DepressButton(_col.transform.localScale.x);
+			} else {
+				Debug.Log("Wrong Answer");
+			}
 		}
 	}
 
