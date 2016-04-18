@@ -8,34 +8,19 @@ public class QuizGame : MonoBehaviour {
 	private InputField _answers;
 
 	[HideInInspector]
-	public int _valueQ;
+	public int _valueQ = 10;
 	[HideInInspector]
-	public int _valueA;
+	public int _valueA = 3;
 
 	string[] objects = {"Question", "Save", "OptionA", "OptionB", "OptionC", "OptionD", "OptionE", "OptionF", "OptionG"};
 
 	void Start() {
-		for (int i = 0; i < 9; i++) {
-			GameObject _object = GameObject.Find(objects[i]);
-			_object.transform.localScale = new Vector3(0, 0, 0);
-		}
+
 	}
 
 	public void Generate() {
-		GameObject questions = GameObject.Find("NumberOfQuestions");
-		GameObject answers = GameObject.Find("NumberOfAnwers");
-		_questions = questions.GetComponent<InputField>();
-		_answers = answers.GetComponent<InputField>();
-
-		if (_questions.text!="" && _answers.text!="") {
-			MakeTable(_questions,_answers);
-		}
-
-	}
-
-	private void MakeTable(InputField _questions, InputField _answers) {
-		_valueQ = int.Parse(_questions.text);
-		_valueA = int.Parse(_answers.text);
+		_valueQ = 10;
+		_valueA = 3;
 
 		_questions.text = "";
 		_answers.text = "";
