@@ -2,6 +2,7 @@
 
 ## To Do
 
+-make game
 - ~~Fix player through platform~~
 - Joystick size
 - Table view size
