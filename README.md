@@ -8,6 +8,9 @@
 - Game z distance on button and player
 - Save questions to file
 - Load question in to game
+- 10 questions
+- 3 answers per question
+- have 15 questions/coins and randomly give either question or coin. 
 
 ## Build wirelessly to Android (Mac)
 
