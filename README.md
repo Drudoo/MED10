@@ -4,7 +4,7 @@
 
 - [x] ~~Fix player through platform~~
 - [ ] :exclamation: Joystick size. No down button just two arrows. 
-- [x] :bangbang: ~~Table view size~~
+- [x] ~~:bangbang: Table view size~~
 - [ ] Game z distance on button and player
 - [x] ~~:bangbang: Save questions to file~~
 - [x] ~~:bangbang: Load question in to game~~
@@ -22,7 +22,7 @@
 - [ ] Profile: Username, email and so on (look at report)
 - [ ] :exclamation: ID for each game and you can add a name. 
 - [ ] :exclamation: Add game name
-- [ ] :exclamation: No make game.
+- [x] :exclamation: ~~No make game.~~
 - [x] :exclamation: ~~Search in table.~~ 
 - [ ] :exclamation: Popup saying game ID and questions and a button that says access game. 
 - [ ] Student: Add game ID. Load game.
