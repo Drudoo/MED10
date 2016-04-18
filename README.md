@@ -4,7 +4,7 @@
 
 - [x] ~~Fix player through platform~~
 - [ ] :exclamation: Joystick size. No down button just two arrows. 
-- [ ] :bangbang: Table view size
+- [x] :bangbang: Table view size
 - [ ] Game z distance on button and player
 - [x] :bangbang: ~~Save questions to file~~
 - [ ] :bangbang: Load question in to game
@@ -39,7 +39,8 @@
 ## Problems :ant: :heavy_plus_sign: Bugs :bug:
 
 - :space_invader: UniqueID is the current date, so working on a quiz at mightnight can *potentially* cause problems. 
-- :rage: Enter game name is not native to android. Fix later. 
+- :rage: Enter game name is not native to android. Fix later.
+	- :imp: text field is there, but cant get the value. 
 
 ## Build wirelessly to Android (Mac)
 

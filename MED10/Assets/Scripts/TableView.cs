@@ -5,12 +5,13 @@ using System.Text.RegularExpressions;
 using UnityEngine.UI;
 
 public class TableView : MonoBehaviour {
+	[HideInInspector]
 	public Vector2 scrollPosition;
 	private bool showTable = false;
 	private string scores;
 
-	static float WIDTH = Screen.width;
-	static float HEIGHT = Screen.height;
+	static float WIDTH = Screen.width/2;
+	static float HEIGHT = Screen.height/2;
 
 	//-----//
 	const int ButtonWidth = 256;
@@ -127,17 +128,17 @@ public class TableView : MonoBehaviour {
 			//scores = "a\tb\tc\nd\te\tf\na\tb\tc\nd\te\tf\na\tb\tc\nd\te\tf\na\tb\tc\nd\te\tf\na\tb\tc\nd\te\tf\na\tb\tc\nd\te\tf\na\tb\tc\nd\te\tf\na\tb\tc\nd\te\tf\n";
 
 			scores = "Student name\tGame id\tGame name\tTime\nDeborah Wells\t509579\tQuiz\tApr 14 15:27:36 2016 GMT\nNora Terry\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nCynthia Grant\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nJonathan Jones\t307371\tPuzzle\tJun 19 18:27:36 2013 GMT\nEarl Washington\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nJacqueline Foster\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nDeborah Wells\t509579\tQuiz\tApr 14 15:27:36 2016 GMT\nNora Terry\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nCynthia Grant\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nJonathan Jones\t307371\tPuzzle\tJun 19 18:27:36 2013 GMT\nEarl Washington\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nJacqueline Foster\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nDeborah Wells\t509579\tQuiz\tApr 14 15:27:36 2016 GMT\nNora Terry\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nCynthia Grant\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nJonathan Jones\t307371\tPuzzle\tJun 19 18:27:36 2013 GMT\nEarl Washington\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nJacqueline Foster\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nDeborah Wells\t509579\tQuiz\tApr 14 15:27:36 2016 GMT\nNora Terry\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nCynthia Grant\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nJonathan Jones\t307371\tPuzzle\tJun 19 18:27:36 2013 GMT\nEarl Washington\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nJacqueline Foster\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nDeborah Wells\t509579\tQuiz\tApr 14 15:27:36 2016 GMT\nNora Terry\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nCynthia Grant\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nJonathan Jones\t307371\tPuzzle\tJun 19 18:27:36 2013 GMT\nEarl Washington\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nJacqueline Foster\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nDeborah Wells\t509579\tQuiz\tApr 14 15:27:36 2016 GMT\nNora Terry\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nCynthia Grant\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nJonathan Jones\t307371\tPuzzle\tJun 19 18:27:36 2013 GMT\nEarl Washington\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nJacqueline Foster\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\n";
-			float win = Screen.width*0.6f;
+			float win = WIDTH*0.6f;
 			float w1=win*0.35f;
 			float w2=win*0.15f;
 			float w3=win*0.35f;
 
 		    string[] lines = Regex.Split(scores, "[\\n]");
-			GUILayout.BeginArea(new Rect(100,100,Screen.width-200,Screen.height-400));
+			GUILayout.BeginArea(new Rect(100,100,WIDTH-200,HEIGHT-300));
 			//scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(Screen.width-200),GUILayout.Height(Screen.height-400));
 
 			//-----//
-			scrollPos = TouchScrollView(new Rect(100,100,Screen.width-200,Screen.height-400),scrollPos,new Rect(100,100,Screen.width-200,Screen.height-400), ref scrollFinger);
+			scrollPos = TouchScrollView(new Rect(100,100,Screen.width-200,Screen.height-300),scrollPos,new Rect(100,100,Screen.width-200,Screen.height-300), ref scrollFinger);
 			//-----//
 
 
@@ -163,5 +164,9 @@ public class TableView : MonoBehaviour {
 			GUILayout.EndArea();
 
 		}
+	}
+
+	public void searchStudent() {
+		
 	}
 }

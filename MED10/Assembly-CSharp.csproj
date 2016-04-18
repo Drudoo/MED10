@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AlertInput.cs" />
      <Compile Include="Assets\Scripts\AlertPopup.cs" />
      <Compile Include="Assets\Scripts\AndroidDialog.cs" />
      <Compile Include="Assets\Scripts\AskQuestion.cs" />
