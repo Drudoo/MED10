@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
+using System.Collections.Generic;
 
 public class AskQuestion : MonoBehaviour {
 
@@ -21,7 +23,59 @@ public class AskQuestion : MonoBehaviour {
 	private bool b_pressed = false;
 	private bool c_pressed = false;
 
+	private static List<string> questions;
 
+	public static int count = 0;
+
+	private void loadFile() {
+		string filePath = getFilePath();
+		try {
+			if (!File.Exists(filePath)) {
+				Debug.Log("No file to load!");
+			} else {
+				Debug.Log("Reading file...");
+				string[] array = File.ReadAllLines(filePath);
+				questions = new List<string>(array);
+			}
+		} catch (System.Exception e) {
+			Debug.Log(e);
+		}
+	}
+
+	private void printList(List<string> list) {
+		string line = "";
+		string temp;
+		foreach (string str in list) {
+			temp = " " + str;
+			line = line + temp;
+		}
+		Debug.Log("Printing list: " + line);
+
+	}
+
+	private string getFilePath() {
+		string date = System.DateTime.Now.ToString("dd");
+		string month = System.DateTime.Now.ToString("MM");
+		string year = System.DateTime.Now.ToString("yyyy");
+		//Debug.Log(date + " " + month + " " + year);
+
+		string fileName = year+month+date+".txt";
+		//Debug.Log(uniqueID);
+		string filePath = Application.persistentDataPath + "/" + fileName;
+		return filePath;
+	}
+
+	void Start() {
+		Debug.Log("My count is: " + count);
+		loadFile();
+		printList(questions);
+		mTitle = questions[0+count];
+		answerA = questions[1+count];
+		answerB = questions[2+count];
+		answerC = questions[3+count];
+		count+=4;
+		//System.Threading.Thread.Sleep(1000);
+	}
 
 	public void showQuestion() {
 		showAlert = true;
