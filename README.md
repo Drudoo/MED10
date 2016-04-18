@@ -11,6 +11,9 @@
 - 10 questions
 - 3 answers per question
 - have 15 questions/coins and randomly give either question or coin. 
+- Enemy
+- Question when you die. 
+- Save one question for when they die. 
 
 ## Build wirelessly to Android (Mac)
 
