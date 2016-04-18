@@ -6,10 +6,10 @@
 - [ ] :exclamation: Joystick size. No down button just two arrows. 
 - [ ] :bangbang: Table view size
 - [ ] Game z distance on button and player
-- [ ] :bangbang: Save questions to file
+- [x] :bangbang: ~~Save questions to file~~
 - [ ] :bangbang: Load question in to game
-- [ ] 10 questions
-- [ ] 3 answers per question
+- [x] ~~10 questions~~
+- [x] ~~3 answers per question~~
 - [ ] :bangbang: have 15 questions/coins and randomly give either question or coin. 
 - [ ] :bangbang: Enemy. Just walk around, when you collide you die.
 - [ ] Question when you die. 

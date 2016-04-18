@@ -28,13 +28,23 @@ public class SaveQuestions : MonoBehaviour {
 	private string fileName = "questions.txt";
 	private string filePath;
 
+	private static int uniqueID = 0;
+
 	void Start() {
-		filePath = Application.persistentDataPath + "/" + fileName;
 		#if UNITY_EDITOR
 			device = "UNITY_EDITOR";
 		#elif UNITY_ANDROID
 			device = "UNITY_ANDROID";
 		#endif
+
+		string date = System.DateTime.Now.ToString("dd");
+		string month = System.DateTime.Now.ToString("MM");
+		string year = System.DateTime.Now.ToString("yyyy");
+		//Debug.Log(date + " " + month + " " + year);
+		uniqueID = int.Parse(date)+int.Parse(month)+int.Parse(year);
+		fileName = year+month+date+".txt";
+		//Debug.Log(uniqueID);
+		filePath = Application.persistentDataPath + "/" + fileName;
 
 		Debug.Log(valueQ + " " + valueA);
 		label = GameObject.Find("question_title");
@@ -70,7 +80,7 @@ public class SaveQuestions : MonoBehaviour {
 
 			if (count == valueQ) {
 				for (int i = 0; i < valueQ; i++) {
-					Debug.Log(count + ":: "+ questions[i] + ": " + answerA[i] + " " + answerB[i] + " " + answerC[i]);
+					Debug.Log(questions[i] + ": " + answerA[i] + " " + answerB[i] + " " + answerC[i]);
 				}
 
 				for (int i = 0; i < valueA+3; i++) {
@@ -78,10 +88,15 @@ public class SaveQuestions : MonoBehaviour {
 					_object.transform.localScale = new Vector3(0, 0, 0);
 				}
 
-				if (device == "UNITY_EDITOR") {
-					saveEditor(questions);
-				} else {
-				}
+				count = 0;
+
+				printList(questions);
+				printList(answerA);
+				printList(answerB);
+				printList(answerC);
+
+				deleteFile();
+				saveEditor(questions,answerA,answerB,answerC);
 			}
 		}
 	}
@@ -90,20 +105,51 @@ public class SaveQuestions : MonoBehaviour {
 
 	}
 
-	private void saveEditor(List<string> text) {
+	public void printFile() {
+		string[] temp = File.ReadAllLines(filePath);
+		List<string> previousText = new List<string>(temp);
+		printList(previousText);
+	}
+
+	private void saveEditor(List<string> q, List<string> a, List<string> b, List<string> c) {
 		try {
 			if (!File.Exists(filePath)) {
 				Debug.Log("File opened");
 				Debug.Log("Writing...");
+				List<string> text = new List<string>();
+
+				for (int i = 0; i < q.Count; i++) {
+					text.Add(q[i]);
+					text.Add(a[i]);
+					text.Add(b[i]);
+					text.Add(c[i]);
+				}
 				File.WriteAllLines(filePath, text.ToArray());
 				Debug.Log("Done!");
 			} else {
 				Debug.Log("File fileName" + " exists");
-				//string[] levelsInfo = File.ReadAllLines(fileName);
 			}
 		} catch (System.Exception e) {
 			Debug.Log(e);
 		}
-		Debug.Log(filePath);
+	}
+
+	private void printList(List<string> list) {
+		string line = "";
+		string temp;
+		foreach (string str in list) {
+			temp = " " + str;
+			line = line + temp;
+		}
+		Debug.Log("Printing list: " + line);
+	}
+
+	private void deleteFile() {
+		if (File.Exists(filePath)) {
+			Debug.Log("Deleting File...");
+			File.Delete(filePath);
+		} else {
+			Debug.Log("File cannot be deleted.");
+		}
 	}
 }
