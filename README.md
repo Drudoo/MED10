@@ -26,7 +26,7 @@
 - [ ] Student: Add game ID. Load game.
 	- [ ] Plugins
 	- [ ] Achievements
-- [ ] Student: new template shows games with name and id. 
+- [ ] :rage: Student: new template shows games with name and id. 
 
 ## Open architecture
 - :bangbang: How can plugins be created. 
