@@ -35,6 +35,10 @@
 - Is it okay to not have some of the functionality, like cloud structure and game sharing?
 - Teacher 
 
+## Problems :ant: / Bugs :bug:
+
+- :space_invader: UniqueID is the current date, so working on a quiz at mightnight can *potentially* cause problems. 
+
 ## Build wirelessly to Android (Mac)
 
 - Install ``adb``: 
