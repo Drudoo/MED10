@@ -2,9 +2,9 @@
 
 ## To Do
 
-- ~~Fix player through platform~~
-- Joystick size. No down button just two arrows. 
-- Table view size
+- [x] ~~Fix player through platform~~
+- [ ] Joystick size. No down button just two arrows. 
+- [] Table view size
 - Game z distance on button and player
 - Save questions to file
 - Load question in to game
