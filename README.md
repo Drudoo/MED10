@@ -4,10 +4,10 @@
 
 - [x] ~~Fix player through platform~~
 - [ ] :exclamation: Joystick size. No down button just two arrows. 
-- [x] :bangbang: Table view size
+- [x] :bangbang: ~~Table view size~~
 - [ ] Game z distance on button and player
-- [x] :bangbang: ~~Save questions to file~~
-- [ ] :bangbang: ~~Load question in to game~~
+- [x] ~~:bangbang: Save questions to file~~
+- [x] ~~:bangbang: Load question in to game~~
 - [x] ~~10 questions~~
 - [x] ~~3 answers per question~~
 - [ ] :confused: add correct answer to questions 
