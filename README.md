@@ -20,6 +20,7 @@
 - [ ] Download: Search for other games. Hard code games we made. Put them in to gallery when downloaded. 
 - [ ] Profile: Username, email and so on (look at report)
 - [ ] :exclamation: ID for each game and you can add a name. 
+- [ ] :exclamation: Add game name
 - [ ] :exclamation: No make game.
 - [ ] :exclamation: Search in table. 
 - [ ] :exclamation: Popup saying game ID and questions and a button that says access game. 
@@ -38,6 +39,7 @@
 ## Problems :ant: :heavy_plus_sign: Bugs :bug:
 
 - :space_invader: UniqueID is the current date, so working on a quiz at mightnight can *potentially* cause problems. 
+- :rage: Enter game name is not native to android. Fix later. 
 
 ## Build wirelessly to Android (Mac)
 
