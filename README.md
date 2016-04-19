@@ -10,8 +10,8 @@
 - [x] ~~:bangbang: Load question in to game~~
 - [x] ~~10 questions~~
 - [x] ~~3 answers per question~~
-- [x] ~~:confused: add correct answer to questions ~~
-- [x] ~~:bangbang: have 15 questions/coins and randomly give either question or coin. ~~
+- [x] ~~:confused: add correct answer to questions~~
+- [x] ~~:bangbang: have 15 questions/coins and randomly give either question or coin.~~
 - [ ] :bangbang: Enemy. Just walk around, when you collide you die.
 - [ ] Question when you die. 
 - [ ] Save one question for when they die. 
