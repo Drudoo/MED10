@@ -28,7 +28,7 @@ public class OpenDoor : MonoBehaviour {
 			#endif
 		}
 
-		Debug.Log("Device: " + device);
+		//Debug.Log("Device: " + device);
 
 	}
 

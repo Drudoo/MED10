@@ -26,14 +26,16 @@ public class AskQuestion : MonoBehaviour {
 	private static List<string> questions;
 
 	public static int count = 0;
+	public static int coins = 0;
+	public bool isCoin = false;
 
 	private void loadFile() {
 		string filePath = getFilePath();
 		try {
 			if (!File.Exists(filePath)) {
-				Debug.Log("No file to load!");
+				//Debug.Log("No file to load!");
 			} else {
-				Debug.Log("Reading file...");
+				//Debug.Log("Reading file...");
 				string[] array = File.ReadAllLines(filePath);
 				questions = new List<string>(array);
 			}
@@ -66,14 +68,31 @@ public class AskQuestion : MonoBehaviour {
 	}
 
 	void Start() {
-		Debug.Log("My count is: " + count);
-		loadFile();
-		printList(questions);
-		mTitle = questions[0+count];
-		answerA = questions[1+count];
-		answerB = questions[2+count];
-		answerC = questions[3+count];
-		count+=4;
+
+
+		if (Random.Range(0, 2) == 0 && coins < 5) {
+			coins++;
+			mTitle = "";
+			answerA = "";
+			answerB = "";
+			answerC = "";
+			rightAnswer = "";
+			isCoin = true;
+			Debug.Log("I am a coin");
+		} else {
+			loadFile();
+			mTitle = questions[0+count];
+			answerA = questions[1+count];
+			answerB = questions[2+count];
+			answerC = questions[3+count];
+			rightAnswer = questions[4+count];
+			count+=5;
+			Debug.Log("I am a question");
+		}
+		//Debug.Log("My count is: " + count);
+
+		//printList(questions);
+
 		//System.Threading.Thread.Sleep(1000);
 	}
 
@@ -89,7 +108,7 @@ public class AskQuestion : MonoBehaviour {
 		if (a_pressed) {
 			Debug.Log("A Pressed");
 			Debug.Log(answerA + " " + rightAnswer);
-			if (answerA == rightAnswer) {
+			if (rightAnswer == "A") {
 				correct = true;
 			}
 			a_pressed = false;
@@ -97,7 +116,7 @@ public class AskQuestion : MonoBehaviour {
 		if (b_pressed) {
 			Debug.Log("B Pressed");
 			Debug.Log(answerB + " " + rightAnswer);
-			if (answerB == rightAnswer) {
+			if (rightAnswer == "B") {
 				correct = true;
 			}
 			b_pressed = false;
@@ -105,7 +124,7 @@ public class AskQuestion : MonoBehaviour {
 		if (c_pressed) {
 			Debug.Log("C Pressed");
 			Debug.Log(answerC + " " + rightAnswer);
-			if (answerC == rightAnswer) {
+			if (rightAnswer == "C") {
 				correct = true;
 			}
 			c_pressed = false;

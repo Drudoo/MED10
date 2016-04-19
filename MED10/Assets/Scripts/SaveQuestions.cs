@@ -10,6 +10,9 @@ public class SaveQuestions : MonoBehaviour {
 	private InputField _A;
 	private InputField _B;
 	private InputField _C;
+	private Toggle _tA;
+	private Toggle _tB;
+	private Toggle _tC;
 	private Text _label;
 
 	private int valueQ = 10;
@@ -19,7 +22,7 @@ public class SaveQuestions : MonoBehaviour {
 	private static List<string> answerA = new List<string>();
 	private static List<string> answerB = new List<string>();
 	private static List<string> answerC = new List<string>();
-
+	private static List<string> correct = new List<string>();
 	private static int count = 0;
 	private GameObject label;
 	private string[] objects = {"Question", "Save", "OptionA", "OptionB", "OptionC", "question_title"};
@@ -61,26 +64,46 @@ public class SaveQuestions : MonoBehaviour {
 			GameObject A = GameObject.Find("OptionA");
 			GameObject B = GameObject.Find("OptionB");
 			GameObject C = GameObject.Find("OptionC");
+			GameObject tA = GameObject.Find("ToggleA");
+			GameObject tB = GameObject.Find("ToggleB");
+			GameObject tC = GameObject.Find("ToggleC");
 
 			_question = question.GetComponent<InputField>();
 			_A = A.GetComponent<InputField>();
 			_B = B.GetComponent<InputField>();
 			_C = C.GetComponent<InputField>();
+			_tA = tA.GetComponent<Toggle>();
+			_tB = tB.GetComponent<Toggle>();
+			_tC = tC.GetComponent<Toggle>();
+
+			Debug.Log(_tA.isOn.ToString() + _tB.isOn.ToString() + _tC.isOn.ToString());
 
 			questions.Add(_question.text);
 			answerA.Add(_A.text);
 			answerB.Add(_B.text);
 			answerC.Add(_C.text);
+			if (_tA.isOn) {
+				correct.Add("A");
+			} else if (_tB.isOn) {
+				correct.Add("B");
+			} else if (_tC.isOn) {
+				correct.Add("C");
+			} else {
+				correct.Add("0");
+			}
 
 			_question.text = "";
 			_A.text = "";
 			_B.text = "";
 			_C.text = "";
+			_tA.isOn = false;
+			_tB.isOn = false;
+			_tC.isOn = false;
 			count++;
 
 			if (count == valueQ) {
 				for (int i = 0; i < valueQ; i++) {
-					Debug.Log(questions[i] + ": " + answerA[i] + " " + answerB[i] + " " + answerC[i]);
+					Debug.Log(questions[i] + ": " + answerA[i] + " " + answerB[i] + " " + answerC[i] + " : " + correct[i]);
 				}
 
 				for (int i = 0; i < valueA+3; i++) {
@@ -94,9 +117,10 @@ public class SaveQuestions : MonoBehaviour {
 				printList(answerA);
 				printList(answerB);
 				printList(answerC);
+				printList(correct);
 
 				deleteFile();
-				saveEditor(questions,answerA,answerB,answerC);
+				saveEditor(questions,answerA,answerB,answerC, correct);
 			}
 		}
 	}
@@ -111,7 +135,7 @@ public class SaveQuestions : MonoBehaviour {
 		printList(previousText);
 	}
 
-	private void saveEditor(List<string> q, List<string> a, List<string> b, List<string> c) {
+	private void saveEditor(List<string> q, List<string> a, List<string> b, List<string> c, List<string> correct) {
 		try {
 			if (!File.Exists(filePath)) {
 				Debug.Log("File opened");
@@ -123,6 +147,7 @@ public class SaveQuestions : MonoBehaviour {
 					text.Add(a[i]);
 					text.Add(b[i]);
 					text.Add(c[i]);
+					text.Add(correct[i]);
 				}
 				File.WriteAllLines(filePath, text.ToArray());
 				Debug.Log("Done!");
