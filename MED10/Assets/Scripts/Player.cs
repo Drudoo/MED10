@@ -14,6 +14,10 @@ public class Player : MonoBehaviour {
 	float accelerationTimeGrounded = .1f;
 	float moveSpeed = 6;
 
+
+	public Vector3 startingPosition= new Vector3(38,216,0);
+
+
 	private bool up_isDown;
 	private bool down_isDown;
 	private bool left_isDown;
@@ -305,6 +309,11 @@ public class Player : MonoBehaviour {
 		if (controller.collisions.above || controller.collisions.below) {
 			velocity.y = 0;
 		}
+
+		if (this.transform.position.y < 188 ) {
+			
+			this.transform.localPosition = startingPosition;
+			Debug.Log("dead");}
 
 	}
 
