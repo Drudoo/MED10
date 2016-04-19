@@ -12,8 +12,8 @@
 - [x] ~~3 answers per question~~
 - [x] ~~:confused: add correct answer to questions~~
 - [x] ~~:bangbang: have 15 questions/coins and randomly give either question or coin.~~
-- [ ] :bangbang: Enemy. Just walk around, when you collide you die.
-- [ ] Question when you die. 
+- [x] ~~:bangbang: Enemy. Just walk around, when you collide you die.~~
+- [ ] Question when you die.
 - [ ] Save one question for when they die. 
 - [ ] settings: sound on/off
 - [ ] Gallery: Previous games
@@ -40,9 +40,10 @@
 
 ## Problems :ant: :heavy_plus_sign: Bugs :bug:
 
-- :space_invader: UniqueID is the current date, so working on a quiz at mightnight can *potentially* cause problems. 
+- :zap: UniqueID is the current date, so working on a quiz at mightnight can *potentially* cause problems. 
 - :rage: Enter game name is not native to android. Fix later.
 	- :imp: text field is there, but cant get the value. 
+- :space_invader: enemies walk between obstacles and not between waypoints. 
 
 ## Build wirelessly to Android (Mac)
 

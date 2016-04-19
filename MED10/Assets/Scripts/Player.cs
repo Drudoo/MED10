@@ -313,6 +313,9 @@ public class Player : MonoBehaviour {
 		velocity.x = velocity.x * dragForceWaterX;
 		velocity.y = velocity.y * dragForceWaterY;
 		inWater = true;
+		if (Hit.tag == "Enemy") {
+			Debug.Log("DEAD!");
+		}
 	}
 
 	void OnTriggerExit2D(Collider2D Hit)
