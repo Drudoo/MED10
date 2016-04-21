@@ -13,8 +13,9 @@ public class Player : MonoBehaviour {
 	float accelerationTimeAirborne = .2f;
 	float accelerationTimeGrounded = .1f;
 	float moveSpeed = 6;
-
-
+	//public var Texture2D newTexture;
+	GameObject questionBox;
+	questionBox = new GameObject("QuestionBox");
 	public Vector3 startingPosition= new Vector3(38,216,0);
 
 
@@ -317,11 +318,14 @@ public class Player : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter2D(Collider2D Hit)
+	void OnTriggerEnter2D(Collider2D coll)
 	{
-		velocity.x = velocity.x * dragForceWaterX;
-		velocity.y = velocity.y * dragForceWaterY;
-		inWater = true;
+
+		if (controller.collisions.above && coll.gameObject.tag == "QuestionBox") {
+			Debug.Log ("collided player");
+			
+
+		}
 	}
 
 	void OnTriggerExit2D(Collider2D Hit)
@@ -329,5 +333,28 @@ public class Player : MonoBehaviour {
 		velocity.x = velocity.x * dragForceAirX;
 		velocity.y = velocity.y * dragForceAirY;
 		inWater = false;
+
+
 	}
+
+	/*void onCollisionEnter(Collision col){
+		if (col.gameObject.name == "QuestionBox") {
+			Debug.Log("collided player");
+		}
+
+
+	}*/
+
+	/*void OnCollisionEnter2D(Collision2D coll) {
+		if (coll.gameObject.tag == "QuestionBox")
+			Debug.Log("collided player");
+
+	}*/
+
+	/*void OnTriggerEnter2D(Collider2D coll) {
+	if (controller.collisions.below && coll.gameObject.tag == "QuestionBox"){
+		Debug.Log("collided player");
+	}
+
+}*/
 }

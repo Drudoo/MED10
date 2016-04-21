@@ -25,15 +25,15 @@ public class Enemy : MonoBehaviour {
 	[HideInInspector]
 	public bool faceDir;
 
-	float direction;
+	//float direction;
 
 	void Start() {
 		controller = GetComponent<Controller2D>();
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
-		maxJumpVelocity = Mathf.Abs(gravity * timeToJumpApex);
-		minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (gravity) * minJumpHeight);
+		//maxJumpVelocity = Mathf.Abs(gravity * timeToJumpApex);
+		//minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (gravity) * minJumpHeight);
 
-		direction = transform.localScale.x;
+		//direction = transform.localScale.x;
 	}
 
 	void Update() {

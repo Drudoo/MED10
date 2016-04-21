@@ -48,6 +48,8 @@
      <Compile Include="Assets\Scripts\AlertPopup.cs" />
      <Compile Include="Assets\Scripts\AndroidDialog.cs" />
      <Compile Include="Assets\Scripts\AskQuestion.cs" />
+     <Compile Include="Assets\Scripts\Box.cs" />
+     <Compile Include="Assets\Scripts\BoxHit.cs" />
      <Compile Include="Assets\Scripts\ButtonScript.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
