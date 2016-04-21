@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\AlertPopup.cs" />
      <Compile Include="Assets\Scripts\AndroidDialog.cs" />
      <Compile Include="Assets\Scripts\AskQuestion.cs" />
+     <Compile Include="Assets\Scripts\Box.cs" />
      <Compile Include="Assets\Scripts\ButtonScript.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
@@ -67,6 +68,7 @@
      <Compile Include="Assets\Scripts\TableView.cs" />
      <Compile Include="Assets\Scripts\aspectRatio.cs" />
      <Compile Include="Assets\Scripts\d_pad.cs" />
+     <None Include="Assets\Materials\BumpedTranslucent.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

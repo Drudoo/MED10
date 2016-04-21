@@ -130,7 +130,7 @@ public class Controller2D : RaycastController {
 						continue;
 					}
 				}
-				
+
 				velocity.y = (hit.distance - skinWidth) * directionY;
 				rayLength = hit.distance;
 

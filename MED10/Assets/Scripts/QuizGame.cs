@@ -15,15 +15,15 @@ public class QuizGame : MonoBehaviour {
 	string[] objects = {"Question", "Save", "OptionA", "OptionB", "OptionC", "OptionD", "OptionE", "OptionF", "OptionG"};
 
 	void Start() {
-		#if UNITY_EDITOR
+		//#if UNITY_EDITOR
 
-		#elif
+		//#elif
 		string[] hide = {"MakeGame", "Print"};
 		for (int i = 0; i < hide.Length; i++) {
 			GameObject _object = GameObject.Find(hide[i]);
 			_object.transform.localScale = new Vector3(0, 0, 0);
 		}
-		#endif
+		//#endif
 
 	}
 

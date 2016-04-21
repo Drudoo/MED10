@@ -56,11 +56,14 @@ public class OpenDoor : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D col) {
 		if (col.tag == "Player" && questionAsked && !askQuestion.correct) {
+
 			questionAsked = false;
 		}
 	}
 
+
 	private void DepressButton(float scale) {
+
 		if (scale >= ScaleToDepress && Vector3.Distance(button.transform.localPosition, buttonStartPosition) < 0.4f) {
 			button.transform.Translate(0f,-1f*Time.deltaTime,0f);
 		}

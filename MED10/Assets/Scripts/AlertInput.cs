@@ -52,7 +52,7 @@ public class AlertInput : MonoBehaviour {
 		public void onClick(AndroidJavaObject obj, int value) {
 			mDialog.mSavePressed = true;
 			mDialog.mCancelPressed = false;
-			Debug.Log("OUTPUT:: " + mDialog.input.Get<string>("getText().toString()"));
+			Debug.Log("OUTPUT:: " + mDialog.input.Get<string>("getText"));
 		}
 	}
 

@@ -25,8 +25,8 @@ public class CameraFollow : MonoBehaviour {
 	}
 
 	void LateUpdate(){
-		focusArea.Update (target.collider.bounds);
-	
+		focusArea.Update(target.collider.bounds);
+
 		Vector2 focusPosition = focusArea.center + Vector2.up * verticalOffset;
 
 		if (focusArea.velocity.x != 0) {
@@ -37,7 +37,7 @@ public class CameraFollow : MonoBehaviour {
 			} else {
 				if (!lookAheadStopped) {
 					lookAheadStopped = true;
-					targetLookAheadX = currectLookAheadX + (lookAheadDirX * lookAheadDstX - currectLookAheadX)/4f;	
+					targetLookAheadX = currectLookAheadX + (lookAheadDirX * lookAheadDstX - currectLookAheadX)/4f;
 				}
 			}
 		}
@@ -61,7 +61,7 @@ public class CameraFollow : MonoBehaviour {
 
 		float left,right;
 		float top,bottom;
-	
+
 		public FocusArea(Bounds targetBounds, Vector2 size) {
 			left = targetBounds.center.x - size.x/2;
 			right = targetBounds.center.x + size.x/2;
@@ -71,7 +71,7 @@ public class CameraFollow : MonoBehaviour {
 			velocity = Vector2.zero;
 			center = new Vector2((left+right)/2,(top+bottom)/2);
 		}
-	
+
 		public void Update(Bounds targetBounds) {
 			float shiftX = 0;
 			if (targetBounds.min.x < left) {

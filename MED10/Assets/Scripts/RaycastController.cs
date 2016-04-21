@@ -45,7 +45,7 @@ public class RaycastController : MonoBehaviour {
 		verticalRayCount = Mathf.Clamp (verticalRayCount, 2, int.MaxValue);
 
 		horizontalRaySpacing = bounds.size.y / (horizontalRayCount - 1);
-		verticalRaySpacing = bounds.size.x / (verticalRayCount - 1);	
+		verticalRaySpacing = bounds.size.x / (verticalRayCount - 1);
 	}
 
 	public struct RaycastOrigins {

@@ -20,6 +20,8 @@ public class Player : MonoBehaviour {
 	private bool right_isDown;
 	private bool jump_isDown;
 
+	private Vector3 startingPosition;
+
 	public Vector2 wallJumpClimb = new Vector2(7.5f,25.0f);
 	public Vector2 wallJumpOff = new Vector2(8.5f,7.0f);
 	public Vector2 wallLeap = new Vector2(18.0f,25.0f);
@@ -56,8 +58,6 @@ public class Player : MonoBehaviour {
 	Camera viewCamera;
 	float direction;
 
-	public Button _left;
-
 	private Vector2 input;
 
 	private d_pad buttonUp;
@@ -70,8 +70,8 @@ public class Player : MonoBehaviour {
 
 	void Start() {
 
-		buttonUp = GameObject.Find("Up").GetComponent<d_pad>();
-		buttonDown = GameObject.Find("Down").GetComponent<d_pad>();
+		//buttonUp = GameObject.Find("Up").GetComponent<d_pad>();
+		//buttonDown = GameObject.Find("Down").GetComponent<d_pad>();
 		buttonLeft = GameObject.Find("Left").GetComponent<d_pad>();
 		buttonRight = GameObject.Find("Right").GetComponent<d_pad>();
 		buttonJump = GameObject.Find("Jump").GetComponent<d_pad>();
@@ -85,6 +85,8 @@ public class Player : MonoBehaviour {
 		viewCamera = Camera.main;
 		direction = transform.localScale.x;
 
+		startingPosition  = transform.position;
+
 		dragForceWaterX = pWater*(velocity.x *velocity.x)*cd*area/2;
 		dragForceWaterY = pWater*(velocity.y *velocity.y)*cd*area/2;
 		dragForceAirX = pAir * (velocity.x * velocity.x) * cd * area / 2;
@@ -94,12 +96,12 @@ public class Player : MonoBehaviour {
 
 	void Update() {
 
-		up_isDown = buttonUp.getButtonState ();
-		down_isDown = buttonDown.getButtonState ();
+		//up_isDown = buttonUp.getButtonState ();
+		//down_isDown = buttonDown.getButtonState ();
 		left_isDown = buttonLeft.getButtonState ();
 		right_isDown = buttonRight.getButtonState ();
 		jump_isDown = buttonJump.getButtonState ();
-
+		/*
 		if (left_isDown) {
 			dirH = -1.0f;
 			//Debug.Log("left");
@@ -114,7 +116,7 @@ public class Player : MonoBehaviour {
 			dirV = -1.0f;
 		} else {
 			dirV = 0.0f;
-		}
+		}*/
 
 /*
 		if (Input.touches.Length <= 0) {
@@ -306,6 +308,12 @@ public class Player : MonoBehaviour {
 			velocity.y = 0;
 		}
 
+		if (this.transform.position.y < 188 ) {
+
+			this.transform.localPosition = startingPosition;
+			Debug.Log("dead");
+		}
+
 	}
 
 	void OnTriggerEnter2D(Collider2D Hit)
@@ -315,6 +323,11 @@ public class Player : MonoBehaviour {
 		inWater = true;
 		if (Hit.tag == "Enemy") {
 			Debug.Log("DEAD!");
+		}
+
+		if (controller.collisions.above && Hit.tag == "QuestionBox") {
+			Hit.gameObject.GetComponent<Box>().hit = true;
+			Debug.Log("I hit a box");
 		}
 	}
 
