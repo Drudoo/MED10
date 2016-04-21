@@ -14,8 +14,8 @@ public class Player : MonoBehaviour {
 	float accelerationTimeGrounded = .1f;
 	float moveSpeed = 6;
 	//public var Texture2D newTexture;
-	GameObject questionBox;
-	questionBox = new GameObject("QuestionBox");
+	public GameObject questionBox;
+
 	public Vector3 startingPosition= new Vector3(38,216,0);
 
 
@@ -323,7 +323,7 @@ public class Player : MonoBehaviour {
 
 		if (controller.collisions.above && coll.gameObject.tag == "QuestionBox") {
 			Debug.Log ("collided player");
-			
+			//question
 
 		}
 	}
