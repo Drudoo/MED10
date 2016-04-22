@@ -35,8 +35,8 @@
 - [ ] :bug: fix enemy quad/raycast script.
 - [ ] :bug: fix texture length.  
 - [ ] :bug: fix platform height so enemies can walk over.  
-- [ ] :exclamation: only one correct answerC
-- [ ] replace question buttons with boxes.
+- [x] :exclamation: ~~only one correct answerC~~
+- [x] ~~replace question buttons with boxes.~~
 - [ ] display questions next to where you save them. 
 
 ## Open architecture
