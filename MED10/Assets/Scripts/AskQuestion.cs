@@ -63,14 +63,14 @@ public class AskQuestion : MonoBehaviour {
 
 		string fileName = year+month+date+".txt";
 		//Debug.Log(uniqueID);
+
 		string filePath = Application.persistentDataPath + "/" + fileName;
 		return filePath;
 	}
 
 	void Start() {
 
-
-		if (Random.Range(0, 2) == 0 && coins < 5) {
+		if (Random.Range(0, 2) == 0 && coins < 3 && this.tag !="Player") {
 			coins++;
 			mTitle = "";
 			answerA = "";
@@ -89,20 +89,17 @@ public class AskQuestion : MonoBehaviour {
 			count+=5;
 			Debug.Log("I am a question");
 		}
-		//Debug.Log("My count is: " + count);
-
-		//printList(questions);
-
-		//System.Threading.Thread.Sleep(1000);
 	}
 
 	public void showQuestion() {
 		showAlert = true;
+		Debug.Log("Questions: " + mTitle);
 	}
 
 	void OnGUI() {
 		if (showAlert) {
 			showDialog();
+			Debug.Log(mTitle + " : " + answerA + " : " + answerB + " : " + answerC + " : " + rightAnswer);
 			showAlert = false;
 		}
 		if (a_pressed) {

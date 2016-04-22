@@ -13,8 +13,8 @@
 - [x] ~~:confused: add correct answer to questions~~
 - [x] ~~:bangbang: have 15 questions/coins and randomly give either question or coin.~~
 - [x] ~~:bangbang: Enemy. Just walk around, when you collide you die.~~
-- [ ] Question when you die.
-- [ ] Save one question for when they die.
+- [x] ~~Question when you die.~~
+- [x] ~~Save one question for when they die.~~
 - [ ] settings: sound on/off
 - [ ] Gallery: Previous games
 - [ ] Upload: progess bar
@@ -29,7 +29,7 @@
 	- [ ] Plugins
 	- [ ] Achievements
 - [ ] :rage: Student: new template shows games with name and id.
-- [ ] :sweat: Dont show question when box is coin.
+- [x] :sweat: ~~Dont show question when box is coin.~~
 - [ ] Grow button back and make door able to close again.
 - [x] :bug: ~~fix CameraFollow script error.~~  
 - [ ] :bug: fix enemy quad/raycast script.
@@ -52,6 +52,7 @@
 - :rage: Enter game name is not native to android. Fix later.
 	- :imp: text field is there, but cant get the value.
 - :space_invader: enemies walk between obstacles and not between waypoints.
+- :zap: Hide MakeGame and Print on android again. 
 
 ## Build wirelessly to Android (Mac)
 
