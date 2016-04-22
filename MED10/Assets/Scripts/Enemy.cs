@@ -48,30 +48,10 @@ public class Enemy : MonoBehaviour {
 		Vector2 input = new Vector2(1.0f*wallDirX, 0.0f);
 		float targetVelocityX = input.x * moveSpeed;
 		velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below?accelerationTimeGrounded:accelerationTimeAirborne));
-/*
-		if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && velocity.y < 0) {
-			wallSliding = true;
-			if (velocity.y < -wallSlideSpeedMax) {
-				velocity.y = -wallSlideSpeedMax;
-			}
-
-			if (timeToWallUnstick > 0) {
-				velocityXSmoothing = 0;
-				velocity.x = 0;
-
-				if (input.x != wallDirX && input.x != 0) {
-					timeToWallUnstick -= Time.deltaTime;
-				} else {
-					timeToWallUnstick = wallStickTime;
-				}
-			} else {
-				timeToWallUnstick = wallStickTime;
-			}
-		}
-		*/
 
 		velocity.y += gravity * Time.deltaTime;
 		controller.Move(velocity * Time.deltaTime, input);
+
 	}
 
 }
