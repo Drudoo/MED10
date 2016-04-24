@@ -8,13 +8,13 @@ public class AskQuestion : MonoBehaviour {
 	const int ButtonWidth = 256;
 	const int ButtonHeight = 64;
 
-	public string mMessage = "What is biggest?";
+	public string mMessage = "";
 	public string mTitle = "Question: ";
-	public string answerA = "Mouse";
-	public string answerB = "Elephant";
-	public string answerC = "Dog";
+	public string answerA = "";
+	public string answerB = "";
+	public string answerC = "";
 
-	public string rightAnswer = "Elephant";
+	public string rightAnswer = "";
 
 	public bool correct = false;
 

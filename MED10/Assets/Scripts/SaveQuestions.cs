@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.IO;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class SaveQuestions : MonoBehaviour {
 
@@ -132,6 +133,8 @@ public class SaveQuestions : MonoBehaviour {
 
 				deleteFile();
 				saveEditor(questions,answerA,answerB,answerC, correct);
+
+				SceneManager.LoadScene("Make_game");
 			}
 		}
 	}

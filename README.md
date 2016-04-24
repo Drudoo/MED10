@@ -16,12 +16,12 @@
 - [x] ~~Question when you die.~~
 - [x] ~~Save one question for when they die.~~
 - [x] ~~settings: sound on/off~~
-- [ ] Gallery: Previous games
+- [x] ~~Gallery: Previous games~~
 - [ ] Upload: progess bar
 - [ ] Download: Search for other games. Hard code games we made. Put them in to gallery when downloaded.
 - [ ] Profile: Username, email and so on (look at report)
-- [ ] :exclamation: ID for each game and you can add a name.
-- [ ] :exclamation: Add game name
+- [x] ~~:exclamation: ID for each game and you can add a name.~~
+- [x] ~~:exclamation: Add game name~~
 - [x] :exclamation: ~~No make game.~~
 - [x] :exclamation: ~~Search in table.~~
 - [x] ~~:exclamation: Popup saying game ID and questions and a button that says access game.~~
@@ -37,7 +37,8 @@
 - [ ] :bug: fix platform height so enemies can walk over.  
 - [x] :exclamation: ~~only one correct answerC~~
 - [x] ~~replace question buttons with boxes.~~
-- [x] ~~display questions next to where you save them. ~~
+- [x] ~~display questions next to where you save them.~~
+- [ ] remove toggle box after the 10th questions. 
 
 ## Open architecture
 - :bangbang: How can plugins be created.
