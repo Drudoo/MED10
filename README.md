@@ -3,7 +3,7 @@
 ## To Do
 
 - [x] ~~Fix player through platform~~
-- [ ] :exclamation: Joystick size. No down button just two arrows.
+- [x] ~~:exclamation: Joystick size. No down button just two arrows.~~
 - [x] ~~:bangbang: Table view size~~
 - [x] ~~Game z distance on button and player~~
 - [x] ~~:bangbang: Save questions to file~~
@@ -15,7 +15,7 @@
 - [x] ~~:bangbang: Enemy. Just walk around, when you collide you die.~~
 - [x] ~~Question when you die.~~
 - [x] ~~Save one question for when they die.~~
-- [ ] settings: sound on/off
+- [x] ~~settings: sound on/off~~
 - [ ] Gallery: Previous games
 - [ ] Upload: progess bar
 - [ ] Download: Search for other games. Hard code games we made. Put them in to gallery when downloaded.
