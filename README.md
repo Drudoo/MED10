@@ -24,11 +24,11 @@
 - [ ] :exclamation: Add game name
 - [x] :exclamation: ~~No make game.~~
 - [x] :exclamation: ~~Search in table.~~
-- [ ] :exclamation: Popup saying game ID and questions and a button that says access game.
-- [ ] Student: Add game ID. Load game.
-	- [ ] Plugins
-	- [ ] Achievements
-- [ ] :rage: Student: new template shows games with name and id.
+- [x] ~~:exclamation: Popup saying game ID and questions and a button that says access game.~~
+- [x] ~~Student: Add game ID. Load game.~~
+	- [x] ~~Plugins~~
+	- [x] ~~Achievements~~
+- [x] :rage: ~~Student: new template shows games with name and id.~~
 - [x] :sweat: ~~Dont show question when box is coin.~~
 - [ ] Grow button back and make door able to close again.
 - [x] :bug: ~~fix CameraFollow script error.~~  
@@ -37,7 +37,7 @@
 - [ ] :bug: fix platform height so enemies can walk over.  
 - [x] :exclamation: ~~only one correct answerC~~
 - [x] ~~replace question buttons with boxes.~~
-- [ ] display questions next to where you save them. 
+- [x] ~~display questions next to where you save them. ~~
 
 ## Open architecture
 - :bangbang: How can plugins be created.

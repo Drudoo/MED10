@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\AlertInput.cs" />
      <Compile Include="Assets\Scripts\AlertPopup.cs" />
      <Compile Include="Assets\Scripts\AndroidDialog.cs" />
+     <Compile Include="Assets\Scripts\ApplicationModel.cs" />
      <Compile Include="Assets\Scripts\AskQuestion.cs" />
      <Compile Include="Assets\Scripts\Box.cs" />
      <Compile Include="Assets\Scripts\ButtonScript.cs" />
@@ -57,17 +58,20 @@
      <Compile Include="Assets\Scripts\Controller2D.cs" />
      <Compile Include="Assets\Scripts\DoorScript.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Gallery.cs" />
      <Compile Include="Assets\Scripts\OnClick.cs" />
      <Compile Include="Assets\Scripts\OpenDoor.cs" />
      <Compile Include="Assets\Scripts\PlatformController.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\QuizGame.cs" />
      <Compile Include="Assets\Scripts\RaycastController.cs" />
+     <Compile Include="Assets\Scripts\ReviewGame.cs" />
      <Compile Include="Assets\Scripts\SaveQuestions.cs" />
      <Compile Include="Assets\Scripts\Sign_Up.cs" />
      <Compile Include="Assets\Scripts\TableView.cs" />
      <Compile Include="Assets\Scripts\aspectRatio.cs" />
      <Compile Include="Assets\Scripts\d_pad.cs" />
+     <Compile Include="Assets\Scripts\ftp.cs" />
      <None Include="Assets\Materials\BumpedTranslucent.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

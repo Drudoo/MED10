@@ -15,6 +15,8 @@ public class SaveQuestions : MonoBehaviour {
 	private Toggle _tC;
 	private Text _label;
 
+	private Text _prevQuestions;
+	private string prevQstr = "Previous Questions: ";
 	private int valueQ = 10;
 	private int valueA = 3;
 
@@ -28,7 +30,7 @@ public class SaveQuestions : MonoBehaviour {
 	private string[] objects = {"Question", "Save", "OptionA", "OptionB", "OptionC", "question_title"};
 
 	private string device = "";
-	private string fileName = "questions.txt";
+	private string fileName = "";
 	private string filePath;
 
 	private static int uniqueID = 0;
@@ -53,6 +55,10 @@ public class SaveQuestions : MonoBehaviour {
 		label = GameObject.Find("question_title");
 		_label = label.GetComponent<Text>();
 		_label.text = "Enter Question " + (count+1) + " of " + valueQ;
+
+		GameObject pq = GameObject.Find("Questions");
+		_prevQuestions = pq.GetComponent<Text>();
+		_prevQuestions.text = prevQstr;
 
 	}
 
@@ -93,6 +99,9 @@ public class SaveQuestions : MonoBehaviour {
 			} else {
 				correct.Add("0");
 			}
+
+			prevQstr+="\n"+_question.text;
+			_prevQuestions.text = prevQstr;
 
 			_question.text = "";
 			_A.text = "";

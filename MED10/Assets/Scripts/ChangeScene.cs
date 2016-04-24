@@ -10,7 +10,5 @@ public class ChangeScene : MonoBehaviour {
 
 		SceneManager.LoadScene(sceneToChangeTo);
 	}
-	public void writeToLog() {
-		Debug.Log("shits working");
-	}
+
 }
