@@ -39,6 +39,9 @@
 - [x] ~~replace question buttons with boxes.~~
 - [x] ~~display questions next to where you save them.~~
 - [x] ~~remove toggle box after the 10th questions.~~
+- [ ] :mortar_board: change educator icon size.
+- [ ] :sound: add sound
+- [ ] :mute: make sound button work.  
 
 ## Open architecture
 - :bangbang: How can plugins be created.
