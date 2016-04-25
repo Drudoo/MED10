@@ -47,6 +47,8 @@
 - [ ] save student name
 - [ ] assessment based on the games result. Save that to file and load in to assessment scene. 
 - [ ] dont show gallery before pressing download. 
+- [ ] :bangbang: six questions, four coins. 
+- [ ] test question button (save questions to file, delete other file)
 
 ## Open architecture
 - :bangbang: How can plugins be created.
