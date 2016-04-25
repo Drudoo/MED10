@@ -1,44 +1,52 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent (typeof (Controller2D))]
 public class Box : MonoBehaviour {
 
-	public float maxJumpHeight = 6;
-	public float minJumpHeight = 1;
-	public float timeToJumpApex = 0.4f;
-	float accelerationTimeAirborne = .2f;
-	float accelerationTimeGrounded = .1f;
-	float moveSpeed = 6;
-	float gravity;
-	float maxJumpVelocity;
-	float minJumpVelocity;
-	float velocityXSmoothing;
-	Vector3 velocity;
-	int wallDirX = 1;
-	public float wallSlideSpeedMax = 3;
-	public float wallStickTime = .25f;
-	float timeToWallUnstick;
+	public bool hit = false;
+	//public Texture2D myTexture;
+	public Material questionBoxMat;
+	public GameObject coin;
+	public bool coins = true;
+	private int count = 0;
+	public int scoreValue = 1;
 
-	Controller2D controller;
 
-	[HideInInspector]
-	public bool faceDir;
+
 
 	//float direction;
 
 	void Start() {
-		controller = GetComponent<Controller2D>();
+
+		//questionBoxMat = Resources.Load ("Materials/" + questionBoxUsed") as Material;
+		coins = true;
+		//count = 0;
+
+
+
 
 	}
 
 	void Update() {
+		
+		if (hit) {
+			//this.GetComponent<Renderer>().material.mainTexture = myTexture;
+		
+			//updateScore();
 
-		if (controller.collisions.below) {
-			Debug.Log("enemy box");
+			this.GetComponent<Renderer>().material = questionBoxMat;
+
+			if (coins) {
+				Instantiate (coin, transform.position, Quaternion.identity);
+				coins= false;
+			
+			}
+			hit = false;
+
 		}
 
-
+	
 	}
+		
 
 }

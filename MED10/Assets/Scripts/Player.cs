@@ -14,7 +14,6 @@ public class Player : MonoBehaviour {
 	float accelerationTimeGrounded = .1f;
 	float moveSpeed = 6;
 	//public var Texture2D newTexture;
-	public GameObject questionBox;
 
 	public Vector3 startingPosition= new Vector3(38,216,0);
 
@@ -73,6 +72,10 @@ public class Player : MonoBehaviour {
 	private float dirH = 0.0f;
 	private float dirV = 0.0f;
 
+	//-----score
+	public float score = 0;
+	public Text coinsScore;
+
 	void Start() {
 
 		buttonUp = GameObject.Find("Up").GetComponent<d_pad>();
@@ -80,6 +83,8 @@ public class Player : MonoBehaviour {
 		buttonLeft = GameObject.Find("Left").GetComponent<d_pad>();
 		buttonRight = GameObject.Find("Right").GetComponent<d_pad>();
 		buttonJump = GameObject.Find("Jump").GetComponent<d_pad>();
+		coinsScore = GameObject.Find("coinsScore").GetComponent<Text>();
+
 
 		controller = GetComponent<Controller2D> ();
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
@@ -98,6 +103,9 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update() {
+
+
+		Box boxHit = GetComponent<Box>();
 
 		up_isDown = buttonUp.getButtonState ();
 		down_isDown = buttonDown.getButtonState ();
@@ -321,12 +329,23 @@ public class Player : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D coll)
 	{
 
-		if (controller.collisions.above && coll.gameObject.tag == "QuestionBox") {
-			Debug.Log ("collided player");
-			//question
+		if(controller.collisions.above && coll.gameObject.tag == "QuestionBox") {
+			
+
+			coll.gameObject.GetComponent<Box>().hit = true;
+
+			if(coll.gameObject.GetComponent<Box>().coins){
+			score++;
+			
+			}
+
+			coinsScore.text = score.ToString();
+			//Debug.Log ("collided player" + score );	
+			}
+
 
 		}
-	}
+	//}
 
 	void OnTriggerExit2D(Collider2D Hit)
 	{
@@ -337,24 +356,4 @@ public class Player : MonoBehaviour {
 
 	}
 
-	/*void onCollisionEnter(Collision col){
-		if (col.gameObject.name == "QuestionBox") {
-			Debug.Log("collided player");
-		}
-
-
-	}*/
-
-	/*void OnCollisionEnter2D(Collision2D coll) {
-		if (coll.gameObject.tag == "QuestionBox")
-			Debug.Log("collided player");
-
-	}*/
-
-	/*void OnTriggerEnter2D(Collider2D coll) {
-	if (controller.collisions.below && coll.gameObject.tag == "QuestionBox"){
-		Debug.Log("collided player");
-	}
-
-}*/
 }

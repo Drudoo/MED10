@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\ButtonScript.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
+     <Compile Include="Assets\Scripts\CoinScript.cs" />
      <Compile Include="Assets\Scripts\Collision.cs" />
      <Compile Include="Assets\Scripts\Controller2D.cs" />
      <Compile Include="Assets\Scripts\DoorScript.cs" />
@@ -68,6 +69,7 @@
      <Compile Include="Assets\Scripts\Sign_Up.cs" />
      <Compile Include="Assets\Scripts\TableView.cs" />
      <Compile Include="Assets\Scripts\aspectRatio.cs" />
+     <Compile Include="Assets\Scripts\coinsText.cs" />
      <Compile Include="Assets\Scripts\d_pad.cs" />
      <None Include="Assets\mShadertoy2\mblob2.shader" />
      <None Include="Assets\Materials\NewSurfaceShader 1.shader" />
