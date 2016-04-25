@@ -13,6 +13,8 @@ public class Box : MonoBehaviour {
 
 	public AskQuestion askQuestion;
 
+	public AudioClip audio;
+
 	public bool didHit = false;
 
 	//float direction;
@@ -33,12 +35,19 @@ public class Box : MonoBehaviour {
 		if (hit) {
 			//this.GetComponent<Renderer>().material.mainTexture = myTexture;
 			this.GetComponent<Renderer>().material = questionBoxMat;
+
 			hit = false;
 
 			//updateScore();
 			if (askQuestion.isCoin) {
 
 				if (coins) {
+					if (ApplicationModel.soundOn) {
+						GetComponent<AudioSource>().clip = audio;
+				        GetComponent<AudioSource>().loop = false;
+				        GetComponent<AudioSource>().Play();
+					}
+
 					Instantiate (coin, transform.position, Quaternion.identity);
 					coins= false;
 

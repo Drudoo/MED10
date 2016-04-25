@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 [RequireComponent (typeof (Controller2D))]
 public class Player : MonoBehaviour {
@@ -38,8 +39,6 @@ public class Player : MonoBehaviour {
 	Vector3 velocity;
 	float velocityXSmoothing;
 
-	bool inWater = false;
-
 	Controller2D controller;
 
 	[HideInInspector]
@@ -63,8 +62,34 @@ public class Player : MonoBehaviour {
 	public Text coinsScore;
 	public Text questionScore;
 
+	private float lastDeath = 0.0f;
+
+	private List<Vector3> cape = new List<Vector3>();
+
+	public AudioClip audio;
+
+	#if UNITY_EDITOR
+	void OnDrawGizmos() {
+
+		for (int i = 0; i < cape.Count-1; i++) {
+			Gizmos.color = Color.red;
+			Gizmos.DrawLine(cape[i], cape[i+1]);
+			//Gizmos.color = Color.yellow;
+			//Gizmos.DrawSphere(cape[i], 0.1f);
+		}
+	}
+	#endif
+
+
 
 	void Start() {
+
+		if (ApplicationModel.soundOn) {
+			GetComponent<AudioSource>().clip = audio;
+			GetComponent<AudioSource>().loop = true;
+			GetComponent<AudioSource>().Play();
+		}
+
 		buttonLeft = GameObject.Find("Left").GetComponent<d_pad>();
 		buttonRight = GameObject.Find("Right").GetComponent<d_pad>();
 		buttonJump = GameObject.Find("Jump").GetComponent<d_pad>();
@@ -112,6 +137,13 @@ public class Player : MonoBehaviour {
 			input = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 		} else {
 			input = new Vector2 (dirH, dirV);
+		}
+
+		if (cape.Count < 50) {
+			cape.Add(transform.position);
+		} else {
+			cape.RemoveAt(0);
+			cape.Add(transform.position);
 		}
 
 		int wallDirX = (controller.collisions.left) ? -1 : 1;
@@ -221,7 +253,12 @@ public class Player : MonoBehaviour {
 		}
 
 		if (isDead) {
-			this.transform.localPosition = startingPosition;
+			if (Time.time - lastDeath < 3f) {
+				this.transform.localPosition = startingPosition;
+			} else {
+				this.transform.localPosition = cape[0];
+			}
+
 			if (!questionAsked) {
 				if (device == "UNITY_ANDROID") {
 					askQuestion.showQuestion();
@@ -230,6 +267,7 @@ public class Player : MonoBehaviour {
 				}
 				questionAsked = true;
 			}
+			lastDeath = Time.time;
 			isDead = false;
 		}
 
@@ -248,6 +286,9 @@ public class Player : MonoBehaviour {
 				Hit.gameObject.GetComponent<Box>().hit = true;
 	 			if(Hit.gameObject.GetComponent<Box>().coins && Hit.gameObject.GetComponent<AskQuestion>().isCoin){
 					score++;
+				}
+				if (!Hit.gameObject.GetComponent<AskQuestion>().isCoin && device == "UNITY_ANDROID") {
+					askQuestion.showQuestion();
 				}
 				qScore++;
 				questionScore.text = qScore.ToString() + "/12";

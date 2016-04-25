@@ -51,7 +51,7 @@ public class TileTexture : MonoBehaviour {
 				Debug.Log(newTile.transform.parent.position);
 				Debug.Log(newTile.transform.position);
 				newTile.transform.name = "tile_"+i;
-				newTile.transform.position = newTile.transform.parent.position+new Vector3(xIndex*0.55f,0,0);
+				newTile.transform.position = newTile.transform.parent.position+new Vector3(xIndex*0.55f,yIndex*0.55f,0);
 				i++;
 				xIndex++;
 			}

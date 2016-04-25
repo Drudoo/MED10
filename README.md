@@ -33,15 +33,15 @@
 - [x] ~~Grow button back and make door able to close again.~~
 - [x] :bug: ~~fix CameraFollow script error.~~  
 - [ ] :bug: fix enemy quad/raycast script.
-- [ ] :bug: fix texture length.  
-- [ ] :bug: fix platform height so enemies can walk over.  
+- [x] :bug: ~~fix texture length.~~
+- [x] :bug: ~~fix platform height so enemies can walk over.~~  
 - [x] :exclamation: ~~only one correct answerC~~
 - [x] ~~replace question buttons with boxes.~~
 - [x] ~~display questions next to where you save them.~~
 - [x] ~~remove toggle box after the 10th questions.~~
 - [ ] :mortar_board: change educator icon size.
-- [ ] :sound: add sound
-- [ ] :mute: make sound button work.  
+- [x] :sound: ~~add sound~~
+- [x] :mute: ~~make sound button work.~~  
 - [ ] :skull: respawn at the same place if answer right on dead question. 
 - [ ] destroy scene when new is loaded, so old stuff is not there. 
 - [ ] save student name
