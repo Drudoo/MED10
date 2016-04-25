@@ -42,6 +42,7 @@
 - [ ] :mortar_board: change educator icon size.
 - [ ] :sound: add sound
 - [ ] :mute: make sound button work.  
+- [ ] :skull: respawn if answer right on dead question. 
 
 ## Open architecture
 - :bangbang: How can plugins be created.
