@@ -189,12 +189,19 @@ public class TableView : MonoBehaviour {
 		studentName = studentObj.GetComponent<InputField>();
 
 		string temp = studentName.text;
+
 		int index = list.FindIndex(item => item.Contains(temp));
 		Debug.Log("Name: " + list[index] + " -> GameID: " + list[index+1] + " -> GameName: " + list[index+2] + " -> Time: " + list[index+3]);
 
 		showPopUp=true;
-		mTitle=list[index];
-		mMessage=list[index+1] + " : " + list[index+2] + " : "  + list[index+3];
+
+		if (temp == "") {
+			mTitle = "Enter Student Name";
+			mMessage = "Please enter the full name of the student you want to search for.";
+		} else {
+			mTitle=list[index];
+			mMessage=list[index+1] + " : " + list[index+2] + " : "  + list[index+3];
+		}
 	}
 
 	private void printList(List<string> list) {

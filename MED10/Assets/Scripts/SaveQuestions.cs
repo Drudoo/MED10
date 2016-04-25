@@ -55,7 +55,7 @@ public class SaveQuestions : MonoBehaviour {
 		Debug.Log(valueQ + " " + valueA);
 		label = GameObject.Find("question_title");
 		_label = label.GetComponent<Text>();
-		_label.text = "Enter Question " + (count+1) + " of " + valueQ;
+		_label.text = "Please enter question " + (count+1) + " of " + valueQ;
 
 		GameObject pq = GameObject.Find("Questions");
 		_prevQuestions = pq.GetComponent<Text>();
@@ -101,7 +101,7 @@ public class SaveQuestions : MonoBehaviour {
 				correct.Add("0");
 			}
 
-			prevQstr+="\n"+_question.text;
+			prevQstr+="\n"+ (count+1) + " :" +_question.text;
 			_prevQuestions.text = prevQstr;
 
 			_question.text = "";

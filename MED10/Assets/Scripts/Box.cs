@@ -4,37 +4,51 @@ using System.Collections;
 public class Box : MonoBehaviour {
 
 	public bool hit = false;
-
+	//public Texture2D myTexture;
 	public Material questionBoxMat;
-	public AskQuestion askQuestion;
-	private bool questionAsked = false;
+	public GameObject coin;
+	public bool coins = true;
+	private int count = 0;
+	public int scoreValue = 1;
 
-	private string device = "";
+	public AskQuestion askQuestion;
+
+	public bool didHit = false;
+
+	//float direction;
 
 	void Start() {
-		#if UNITY_EDITOR
-			device = "UNITY_EDITOR";
-		#endif
 
-		if (device == "") {
-			#if UNITY_ANDROID
-				device = "UNITY_ANDROID";
-			#endif
-		}
+		//questionBoxMat = Resources.Load ("Materials/" + questionBoxUsed") as Material;
+		coins = true;
+		//count = 0;
+
+
+
+
 	}
 
 	void Update() {
 
-		if (hit && !questionAsked) {
+		if (hit) {
+			//this.GetComponent<Renderer>().material.mainTexture = myTexture;
 			this.GetComponent<Renderer>().material = questionBoxMat;
-			if (device == "UNITY_ANDROID") {
-				if (!questionAsked && !askQuestion.isCoin) {
-					askQuestion.showQuestion();
+			hit = false;
+
+			//updateScore();
+			if (askQuestion.isCoin) {
+
+				if (coins) {
+					Instantiate (coin, transform.position, Quaternion.identity);
+					coins= false;
+
 				}
-			} else {
-				Debug.Log(askQuestion.isCoin?"I am a coin":("Question: " + askQuestion.mTitle));
 			}
-			questionAsked = true;
+
 		}
+
+
 	}
+
+
 }

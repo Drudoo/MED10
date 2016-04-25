@@ -42,14 +42,25 @@
 - [ ] :mortar_board: change educator icon size.
 - [ ] :sound: add sound
 - [ ] :mute: make sound button work.  
-- [ ] :skull: respawn if answer right on dead question. 
+- [ ] :skull: respawn at the same place if answer right on dead question. 
+- [ ] destroy scene when new is loaded, so old stuff is not there. 
+- [ ] save student name
+- [ ] assessment based on the games result. Save that to file and load in to assessment scene. 
+- [ ] dont show gallery before pressing download. 
 
 ## Open architecture
 - :bangbang: How can plugins be created.
 
 ## Questions
-- Is it okay to not have some of the functionality, like cloud structure and game sharing?
-- Teacher
+
+## Report
+
+- clarify advantages and disadvantages
+
+## LaTeX
+
+- Fix Other Sources in report
+
 
 ## Problems :ant: :heavy_plus_sign: Bugs :bug:
 

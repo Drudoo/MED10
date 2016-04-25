@@ -58,10 +58,20 @@ public class Player : MonoBehaviour {
 	private float dirH = 0.0f;
 	private float dirV = 0.0f;
 
+	public float score = 0;
+	public float qScore = 0;
+	public Text coinsScore;
+	public Text questionScore;
+
+
 	void Start() {
 		buttonLeft = GameObject.Find("Left").GetComponent<d_pad>();
 		buttonRight = GameObject.Find("Right").GetComponent<d_pad>();
 		buttonJump = GameObject.Find("Jump").GetComponent<d_pad>();
+
+		coinsScore = GameObject.Find("coinsScore").GetComponent<Text>();
+
+		questionScore = GameObject.Find("questionScore").GetComponent<Text>();
 
 		controller = GetComponent<Controller2D> ();
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
@@ -234,8 +244,17 @@ public class Player : MonoBehaviour {
 		}
 
 		if (controller.collisions.above && Hit.tag == "QuestionBox" && !Hit.gameObject.GetComponent<Box>().hit) {
-			Hit.gameObject.GetComponent<Box>().hit = true;
-			Debug.Log("I hit a box");
+			if (!Hit.gameObject.GetComponent<Box>().didHit) {
+				Hit.gameObject.GetComponent<Box>().hit = true;
+	 			if(Hit.gameObject.GetComponent<Box>().coins && Hit.gameObject.GetComponent<AskQuestion>().isCoin){
+					score++;
+				}
+				qScore++;
+				questionScore.text = qScore.ToString() + "/12";
+				coinsScore.text = score.ToString();
+				Hit.gameObject.GetComponent<Box>().didHit = true;
+			}
+
 		}
 	}
 }

@@ -14,7 +14,8 @@ public class OnClick : MonoBehaviour {
 
 		private Button _eduB;
 		private Button _stuB;
-
+        static float WIDTH = Screen.width/2;
+        static float HEIGHT = Screen.height/2;
         private float h,w;
 
         void Start() {
@@ -35,12 +36,15 @@ public class OnClick : MonoBehaviour {
 
 		void OnGUI() {
 
-			Rect rect = new Rect (w/2-300/2,h/2, 300, 130);
-			Rect close = new Rect (w/2-300/2+280,h/2,20,20);
-			Rect usr = new Rect(w/2-300/2+50, h/2+25, 200, 20);
-			Rect pwd = new Rect(w/2-300/2+50, h/2+55, 200, 20);
+            GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity,new Vector3(Screen.width / WIDTH, Screen.height / HEIGHT, 1));
 
-			Rect save = new Rect(w/2-300/2+100, h/2+85, 100, 20);
+
+			Rect rect = new Rect (300,200, 325, 200);
+			Rect close = new Rect (300+275,200,50,50);
+			Rect usr = new Rect(300+50, 200+25, 200, 50);
+			Rect pwd = new Rect(300+50, 200+75, 200, 50);
+
+			Rect save = new Rect(300+100, 200+125, 100, 20);
 
 			if (PopUp) {
 					_eduB.interactable = false;
