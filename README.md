@@ -17,8 +17,8 @@
 - [x] ~~Save one question for when they die.~~
 - [x] ~~settings: sound on/off~~
 - [x] ~~Gallery: Previous games~~
-- [ ] Upload: progess bar
-- [ ] Download: Search for other games. Hard code games we made. Put them in to gallery when downloaded.
+- [x] ~~Upload: progess bar~~
+- [x] ~~Download: Search for other games. Hard code games we made. Put them in to gallery when downloaded.~~
 - [ ] Profile: Username, email and so on (look at report)
 - [x] ~~:exclamation: ID for each game and you can add a name.~~
 - [x] ~~:exclamation: Add game name~~
@@ -30,7 +30,7 @@
 	- [x] ~~Achievements~~
 - [x] :rage: ~~Student: new template shows games with name and id.~~
 - [x] :sweat: ~~Dont show question when box is coin.~~
-- [ ] Grow button back and make door able to close again.
+- [x] ~~Grow button back and make door able to close again.~~
 - [x] :bug: ~~fix CameraFollow script error.~~  
 - [ ] :bug: fix enemy quad/raycast script.
 - [ ] :bug: fix texture length.  
@@ -38,7 +38,7 @@
 - [x] :exclamation: ~~only one correct answerC~~
 - [x] ~~replace question buttons with boxes.~~
 - [x] ~~display questions next to where you save them.~~
-- [ ] remove toggle box after the 10th questions. 
+- [x] ~~remove toggle box after the 10th questions.~~
 
 ## Open architecture
 - :bangbang: How can plugins be created.
