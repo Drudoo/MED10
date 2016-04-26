@@ -63,7 +63,7 @@ public class Player : MonoBehaviour {
 	public Text questionScore;
 
 	private float lastDeath = 0.0f;
-
+	private bool deadQuestion = false;
 	private List<Vector3> cape = new List<Vector3>();
 
 	public AudioClip audio;
@@ -253,15 +253,30 @@ public class Player : MonoBehaviour {
 		}
 
 		if (isDead) {
-			if (Time.time - lastDeath < 3f) {
+
+			/*if (Time.time - lastDeath < 3f) {
 				this.transform.localPosition = startingPosition;
 			} else {
 				this.transform.localPosition = cape[0];
-			}
+			}*/
 
 			if (!questionAsked) {
 				if (device == "UNITY_ANDROID") {
-					askQuestion.showQuestion();
+					//askQuestion.showQuestion();
+					//if (askQuestion.correct) {
+					//	this.transform.localPosition = cape[0];
+					//} else {
+					//	this.transform.localPosition = startingPosition;
+					//}
+					askQuestion.done = false;
+					Debug.Log("Waiting for f()");
+					if (!deadQuestion) {
+						StartCoroutine(f());
+					} else {
+						this.transform.localPosition = startingPosition;
+					}
+
+
 				} else {
 					Debug.Log(askQuestion.isCoin?"I am a coin":("Question: " + askQuestion.mTitle));
 				}
@@ -270,10 +285,24 @@ public class Player : MonoBehaviour {
 			lastDeath = Time.time;
 			isDead = false;
 		}
-
-
-
 	}
+
+	IEnumerator f() {
+		Debug.Log("f() started");
+		Vector3 temp = cape[0];
+		askQuestion.showQuestion();
+		while (!askQuestion.done) {
+			yield return null;
+		}
+		if (askQuestion.correct) {
+			this.transform.localPosition = temp;
+		} else {
+			this.transform.localPosition = startingPosition;
+		}
+		deadQuestion = true;
+		Debug.Log("f() done");
+	}
+
 
 	void OnTriggerEnter2D(Collider2D Hit) {
 

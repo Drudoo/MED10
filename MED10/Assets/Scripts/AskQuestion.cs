@@ -29,6 +29,8 @@ public class AskQuestion : MonoBehaviour {
 	public static int coins = 0;
 	public bool isCoin = false;
 
+	public bool done = false;
+
 	private void loadFile() {
 		string filePath = getFilePath();
 		try {
@@ -71,7 +73,7 @@ public class AskQuestion : MonoBehaviour {
 	}
 
 	void Start() {
-
+		done = false;
 		if (Random.Range(0, 2) == 0 && coins < 3 && this.tag !="Player") {
 			coins++;
 			mTitle = "";
@@ -89,12 +91,14 @@ public class AskQuestion : MonoBehaviour {
 			answerC = questions[3+count];
 			rightAnswer = questions[4+count];
 			count+=5;
-			Debug.Log("I am a question");
+			Debug.Log("I am a question: " + mTitle);
 		}
 	}
 
 	public void showQuestion() {
 		showAlert = true;
+		done = false;
+		correct = false;
 		Debug.Log("Questions: " + mTitle);
 	}
 
@@ -111,6 +115,10 @@ public class AskQuestion : MonoBehaviour {
 				correct = true;
 			}
 			a_pressed = false;
+			b_pressed = false;
+			c_pressed = false;
+			done = true;
+			Debug.Log(done);
 		}
 		if (b_pressed) {
 			Debug.Log("B Pressed");
@@ -118,7 +126,11 @@ public class AskQuestion : MonoBehaviour {
 			if (rightAnswer == "B") {
 				correct = true;
 			}
+			a_pressed = false;
 			b_pressed = false;
+			c_pressed = false;
+			done = true;
+			Debug.Log(done);
 		}
 		if (c_pressed) {
 			Debug.Log("C Pressed");
@@ -126,7 +138,11 @@ public class AskQuestion : MonoBehaviour {
 			if (rightAnswer == "C") {
 				correct = true;
 			}
+			a_pressed = false;
+			b_pressed = false;
 			c_pressed = false;
+			done = true;
+			Debug.Log(done);
 		}
 	}
 
@@ -193,7 +209,7 @@ public class AskQuestion : MonoBehaviour {
 
 			alertDialogBuilder.Call<AndroidJavaObject>("setNegativeButton",answerB,new NegativeButtonListner(this));
 
-			alertDialogBuilder.Call<AndroidJavaObject>("setNeutralButton",answerC,new NegativeButtonListner(this));
+			alertDialogBuilder.Call<AndroidJavaObject>("setNeutralButton",answerC,new NeutralButtonListener(this));
 
 			AndroidJavaObject dialog = alertDialogBuilder.Call<AndroidJavaObject>("create");
 			dialog.Call("show");

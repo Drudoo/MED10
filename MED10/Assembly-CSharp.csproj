@@ -75,6 +75,7 @@
      <Compile Include="Assets\Scripts\TileTexture.cs" />
      <Compile Include="Assets\Scripts\aspectRatio.cs" />
      <Compile Include="Assets\Scripts\d_pad.cs" />
+     <Compile Include="Assets\Scripts\fakeSaveQuestions.cs" />
      <Compile Include="Assets\Scripts\ftp.cs" />
      <None Include="Assets\Materials\BumpedTranslucent.shader" />
  <Reference Include="UnityEngine.UI">
