@@ -64,6 +64,7 @@ public class OnClick : MonoBehaviour {
 					if(GUI.Button(save,"Save")) {
 						Debug.Log("Username: " + username);
 						Debug.Log("Password: " + password);
+                        ApplicationModel.username = username;
 						_eduB.interactable = true;
 						_stuB.interactable = true;
 						PopUp = false;

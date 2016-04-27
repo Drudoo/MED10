@@ -45,12 +45,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Assessment.cs" />
      <Compile Include="Assets\Scripts\AlertInput.cs" />
      <Compile Include="Assets\Scripts\AlertPopup.cs" />
      <Compile Include="Assets\Scripts\AndroidDialog.cs" />
      <Compile Include="Assets\Scripts\ApplicationModel.cs" />
      <Compile Include="Assets\Scripts\AskQuestion.cs" />
+     <Compile Include="Assets\Scripts\Assessment.cs" />
      <Compile Include="Assets\Scripts\Box.cs" />
      <Compile Include="Assets\Scripts\ButtonScript.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Collision.cs" />
      <Compile Include="Assets\Scripts\Controller2D.cs" />
      <Compile Include="Assets\Scripts\DoorScript.cs" />
+     <Compile Include="Assets\Scripts\Download.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\Gallery.cs" />
      <Compile Include="Assets\Scripts\OnClick.cs" />

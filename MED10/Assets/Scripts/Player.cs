@@ -260,6 +260,8 @@ public class Player : MonoBehaviour {
 				this.transform.localPosition = cape[0];
 			}*/
 
+			//Debug.Log(deadQuestion?"I died before":"I didn’t die before");
+
 			if (!questionAsked) {
 				if (device == "UNITY_ANDROID") {
 					//askQuestion.showQuestion();
@@ -276,11 +278,17 @@ public class Player : MonoBehaviour {
 						this.transform.localPosition = startingPosition;
 					}
 
-
 				} else {
 					Debug.Log(askQuestion.isCoin?"I am a coin":("Question: " + askQuestion.mTitle));
+
 				}
+
 				questionAsked = true;
+			} else {
+				if (deadQuestion) {
+					this.transform.localPosition = startingPosition;
+				}
+
 			}
 			lastDeath = Time.time;
 			isDead = false;
@@ -294,6 +302,7 @@ public class Player : MonoBehaviour {
 		while (!askQuestion.done) {
 			yield return null;
 		}
+		Debug.Log("Answer was " + (askQuestion.correct?"Correct":"Wrong"));
 		if (askQuestion.correct) {
 			this.transform.localPosition = temp;
 		} else {
@@ -317,10 +326,12 @@ public class Player : MonoBehaviour {
 					score++;
 				}
 				if (!Hit.gameObject.GetComponent<AskQuestion>().isCoin && device == "UNITY_ANDROID") {
-					askQuestion.showQuestion();
+					Hit.gameObject.GetComponent<AskQuestion>().showQuestion();
+				} else {
+					Debug.Log(Hit.gameObject.GetComponent<AskQuestion>().mTitle);
 				}
 				qScore++;
-				questionScore.text = qScore.ToString() + "/12";
+				questionScore.text = qScore.ToString() + "/10";
 				coinsScore.text = score.ToString();
 				Hit.gameObject.GetComponent<Box>().didHit = true;
 			}

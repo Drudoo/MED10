@@ -25,11 +25,12 @@ public class fakeSaveQuestions : MonoBehaviour {
 
 		try {
 			if (!File.Exists(filePath)) {
-				string temp = "q1\na1\nb1\nc1\nA\nq2\na2\nb2\nc2\nB\nq3\na3\nb3\nc3\nC\nq4\na4\nb4\nc4\nB\nq5\na5\nb5\nc5\nC\nq6\na6\nb6\nc6\nA\nq7\na7\nb7\nc7\nC\nq8\na8\nb8\nc8\nB\nq9\na9\nb9\nc9\nC\nq10\na10\nb10\nc10\nA";
+				string temp = "q1\na1\nb1\nc1\nA\nq2\na2\nb2\nc2\nB\nq3\na3\nb3\nc3\nC\nq4\na4\nb4\nc4\nB\nq5\na5\nb5\nc5\nC\nq6\na6\nb6\nc6\nA";
 
 				string[] lines = Regex.Split(temp, "[\\n]");
 
 				File.WriteAllLines(filePath, lines);
+				Debug.Log("File Created");
 			} else {
 				Debug.Log("File fileName" + " exists");
 			}

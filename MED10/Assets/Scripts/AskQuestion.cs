@@ -74,7 +74,7 @@ public class AskQuestion : MonoBehaviour {
 
 	void Start() {
 		done = false;
-		if (Random.Range(0, 2) == 0 && coins < 3 && this.tag !="Player") {
+		if (Random.Range(0, 2) == 0 && coins < 5 && this.tag !="Player") {
 			coins++;
 			mTitle = "";
 			answerA = "";

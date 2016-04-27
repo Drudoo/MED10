@@ -18,7 +18,7 @@ public class SaveQuestions : MonoBehaviour {
 
 	private Text _prevQuestions;
 	private string prevQstr = "Previous Questions: ";
-	private int valueQ = 10;
+	private int valueQ = 6;
 	private int valueA = 3;
 
 	private static List<string> questions = new List<string>();

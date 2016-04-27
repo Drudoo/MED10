@@ -42,13 +42,13 @@
 - [ ] :mortar_board: change educator icon size.
 - [x] :sound: ~~add sound~~
 - [x] :mute: ~~make sound button work.~~  
-- [ ] :skull: respawn at the same place if answer right on dead question. 
+- [x] :skull: ~~respawn at the same place if answer right on dead question.~~ 
 - [ ] destroy scene when new is loaded, so old stuff is not there. 
-- [ ] save student name
+- [x] ~~save student name~~
 - [ ] assessment based on the games result. Save that to file and load in to assessment scene. 
 - [ ] dont show gallery before pressing download. 
-- [ ] :bangbang: six questions, four coins. 
-- [ ] test question button (save questions to file, delete other file)
+- [x] :bangbang: ~~six questions, four coins.~~ 
+- [x] ~~test question button (save questions to file, delete other file)~~
 
 ## Open architecture
 - :bangbang: How can plugins be created.
