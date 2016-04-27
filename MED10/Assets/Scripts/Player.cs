@@ -324,6 +324,7 @@ public class Player : MonoBehaviour {
 				Hit.gameObject.GetComponent<Box>().hit = true;
 	 			if(Hit.gameObject.GetComponent<Box>().coins && Hit.gameObject.GetComponent<AskQuestion>().isCoin){
 					score++;
+					ApplicationModel.coins++;
 				}
 				if (!Hit.gameObject.GetComponent<AskQuestion>().isCoin && device == "UNITY_ANDROID") {
 					Hit.gameObject.GetComponent<AskQuestion>().showQuestion();
@@ -331,7 +332,8 @@ public class Player : MonoBehaviour {
 					Debug.Log(Hit.gameObject.GetComponent<AskQuestion>().mTitle);
 				}
 				qScore++;
-				questionScore.text = qScore.ToString() + "/10";
+				ApplicationModel.boxes++;
+				questionScore.text = qScore.ToString() + "/9";
 				coinsScore.text = score.ToString();
 				Hit.gameObject.GetComponent<Box>().didHit = true;
 			}

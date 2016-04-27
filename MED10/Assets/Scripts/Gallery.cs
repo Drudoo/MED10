@@ -12,35 +12,77 @@ public class Gallery : MonoBehaviour {
 	static float WIDTH = Screen.width/2;
 	static float HEIGHT = Screen.height/2;
 
+	public Texture tex;
+
+	private int totalImages = 0;
+
 	void Start() {
 		DirectoryInfo dir = new DirectoryInfo(Application.persistentDataPath + "/");
 		FileInfo[] info = dir.GetFiles("*.*");
 
 		foreach (FileInfo f in info) {
-			Debug.Log(Path.GetFileName(f.ToString()));
+			//Debug.Log(Path.GetFileName(f.ToString()));
 			files.Add(Path.GetFileNameWithoutExtension(f.ToString()));
 		}
+
 	}
 
 	void OnGUI() {
 
+
 		if (async != null) {
-            GUI.DrawTexture(new Rect(Screen.width/2, Screen.height/2, 256, 16), emptyProgressBar);
-            GUI.DrawTexture(new Rect(Screen.width/2, Screen.height/2, 256 * async.progress, 16), fullProgressBar);
+            GUI.DrawTexture(new Rect(Screen.width/2-256/2, Screen.height/3, 256, 16), emptyProgressBar);
+            GUI.DrawTexture(new Rect(Screen.width/2-256/2, Screen.height/3, 256 * async.progress, 16), fullProgressBar);
         }
 
 		GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity,new Vector3(Screen.width / WIDTH, Screen.height / HEIGHT, 1));
-		GUILayout.BeginArea(new Rect(100,100,150,300));
-	    GUILayout.BeginVertical();
-	    foreach(string i in files) {
-	        if(GUILayout.Button(i)) {
-	            Debug.Log("pressed Item " + i);
-				ApplicationModel.currentLevel = i;
+		GUILayout.BeginArea(new Rect(100,250,800,300));
+	    GUILayout.BeginHorizontal();
+
+
+		if (files.Count == 1) {
+			GUILayout.BeginVertical();
+	        if(GUILayout.Button(tex)) {
+	            Debug.Log("pressed Item " + files[0]);
+				ApplicationModel.currentLevel = files[0];
 				//SceneManager.LoadScene("Game");
 				SyncLoadLevel("Game");
 	        }
+			GUILayout.Label(files[0]);
+			GUILayout.EndVertical();
+		} else if (files.Count == 2) {
+			for (int i = 0; i < 2; i++) {
+				GUILayout.BeginVertical();
+		        if(GUILayout.Button(tex)) {
+		            Debug.Log("pressed Item " + files[i]);
+					ApplicationModel.currentLevel = files[i];
+					//SceneManager.LoadScene("Game");
+					SyncLoadLevel("Game");
+		        }
+				GUILayout.Label(files[i]);
+				GUILayout.EndVertical();
+			}
+		} else {
+			for (int i = files.Count; i --> totalImages;) {
+
+				GUILayout.BeginVertical();
+		        if(GUILayout.Button(tex)) {
+		            Debug.Log("pressed Item " + files[i]);
+					ApplicationModel.currentLevel = files[i];
+					//SceneManager.LoadScene("Game");
+					SyncLoadLevel("Game");
+		        }
+				GUILayout.Label(files[i]);
+				GUILayout.EndVertical();
+			}
+		}
+
+
+
+	    foreach(string i in files) {
+
 	    }
-	    GUILayout.EndVertical();
+	    GUILayout.EndHorizontal();
 	    GUILayout.EndArea();
 
 

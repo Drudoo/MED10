@@ -43,12 +43,14 @@
 - [x] :sound: ~~add sound~~
 - [x] :mute: ~~make sound button work.~~  
 - [x] :skull: ~~respawn at the same place if answer right on dead question.~~ 
-- [ ] destroy scene when new is loaded, so old stuff is not there. 
+- [x] ~~destroy scene when new is loaded, so old stuff is not there.~~ 
 - [x] ~~save student name~~
 - [ ] assessment based on the games result. Save that to file and load in to assessment scene. 
 - [ ] dont show gallery before pressing download. 
 - [x] :bangbang: ~~six questions, four coins.~~ 
 - [x] ~~test question button (save questions to file, delete other file)~~
+- [ ] change date in file name to a random number. 
+- [ ] new scene when learning analytics is pressed with graph.  
 
 ## Open architecture
 - :bangbang: How can plugins be created.
@@ -71,6 +73,7 @@
 	- :imp: text field is there, but cant get the value.
 - :space_invader: enemies walk between obstacles and not between waypoints.
 - :zap: Hide MakeGame and Print on android again. 
+- You can dismiss questions on android. 
 
 ## Build wirelessly to Android (Mac)
 

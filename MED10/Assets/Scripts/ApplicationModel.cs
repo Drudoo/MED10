@@ -9,4 +9,8 @@ public class ApplicationModel {
 
 	static public bool downloaded = false;
 
+	static public int rightAnswers;
+	static public int wrongAnswers;
+	static public int coins;
+	static public int boxes;
 }

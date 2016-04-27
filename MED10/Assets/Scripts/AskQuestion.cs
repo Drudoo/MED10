@@ -112,7 +112,10 @@ public class AskQuestion : MonoBehaviour {
 			Debug.Log("A Pressed");
 			Debug.Log(answerA + " " + rightAnswer);
 			if (rightAnswer == "A") {
+				ApplicationModel.rightAnswers++;
 				correct = true;
+			} else {
+				ApplicationModel.wrongAnswers++;
 			}
 			a_pressed = false;
 			b_pressed = false;
@@ -124,7 +127,10 @@ public class AskQuestion : MonoBehaviour {
 			Debug.Log("B Pressed");
 			Debug.Log(answerB + " " + rightAnswer);
 			if (rightAnswer == "B") {
+				ApplicationModel.rightAnswers++;
 				correct = true;
+			} else {
+				ApplicationModel.wrongAnswers++;
 			}
 			a_pressed = false;
 			b_pressed = false;
@@ -136,7 +142,10 @@ public class AskQuestion : MonoBehaviour {
 			Debug.Log("C Pressed");
 			Debug.Log(answerC + " " + rightAnswer);
 			if (rightAnswer == "C") {
+				ApplicationModel.rightAnswers++;
 				correct = true;
+			} else {
+				ApplicationModel.wrongAnswers++;
 			}
 			a_pressed = false;
 			b_pressed = false;
