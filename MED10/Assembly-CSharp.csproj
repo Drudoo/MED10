@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\aspectRatio.cs" />
      <Compile Include="Assets\Scripts\coinsText.cs" />
      <Compile Include="Assets\Scripts\d_pad.cs" />
+     <Compile Include="Assets\Scripts\scrollRect.cs" />
      <None Include="Assets\mShadertoy2\mblob2.shader" />
      <None Include="Assets\Materials\NewSurfaceShader 1.shader" />
      <None Include="Assets\Materials\Translucent.shader" />
