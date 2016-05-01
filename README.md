@@ -45,7 +45,7 @@
 - [x] :skull: ~~respawn at the same place if answer right on dead question.~~ 
 - [x] ~~destroy scene when new is loaded, so old stuff is not there.~~ 
 - [x] ~~save student name~~
-- [ ] assessment based on the games result. Save that to file and load in to assessment scene. 
+- [ ] assessment based on the games result. Save that to file and load in to assessment scene.
 - [ ] dont show gallery before pressing download. 
 - [x] :bangbang: ~~six questions, four coins.~~ 
 - [x] ~~test question button (save questions to file, delete other file)~~

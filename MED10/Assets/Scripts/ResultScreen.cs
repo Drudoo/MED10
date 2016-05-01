@@ -31,6 +31,7 @@ public class ResultScreen : MonoBehaviour {
 		Score.text = temp.ToString() + "%";
 		Debug.Log(temp);
 
+		ApplicationModel.assessment+=(ApplicationModel.username + "\t" + ApplicationModel.currentLevel + "\t" + temp.ToString()+"%" + "\t" + System.DateTime.Now.ToString("yyyy-MM-ddTHH:mm:sszzz") + "\n");
 
 	}
 	// Update is called once per frame
