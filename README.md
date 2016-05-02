@@ -50,16 +50,22 @@
 - [x] :bangbang: ~~six questions, four coins.~~ 
 - [x] ~~test question button (save questions to file, delete other file)~~
 - [ ] change date in file name to a random number. 
-- [ ] new scene when learning analytics is pressed with graph.  
+- [ ] :bangbang: new scene when learning analytics is pressed with graph.  
 - [ ] :space_invader: no trigger on enemy
 - [ ] question on die not working. 
-- [ ] remove download functionality. just make a popup. 
-- [ ] fix assessment not showing. 
+- [ ] :exclamation: remove download functionality. just make a popup. 
+- [ ] :bangbang: fix assessment not showing for user. 
 - [ ] upload/ddownload title congratulation. 
-- [ ] student new template, fake test input, load button loads a new game. 
-- [ ] student gallery should just be one button. 
+- [ ] :exclamation: student new template, fake test input, load button loads a new game. 
+- [ ] :exclamation: student gallery should just be one button. 
 - [ ] student settings not working.
-- [ ] create quiz previous question box bigger and move add questions to the right. 
+- [ ] :exclamation: create quiz previous question box bigger and move add questions to the right. 
+- [ ] test every button/popup. 
+- [ ] :exclamation: Currently Story template is not available. 
+- [ ] :bangbang: when creating own questions should delete the previous one
+- [ ] :bangbang: Fix make game screen with own questions. 
+- [ ] :exclamation: Fix fake assessment numbers
+- [ ] :exclamation: assessment popup fix. 
 
 
 ## Open architecture
