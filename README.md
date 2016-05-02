@@ -51,6 +51,16 @@
 - [x] ~~test question button (save questions to file, delete other file)~~
 - [ ] change date in file name to a random number. 
 - [ ] new scene when learning analytics is pressed with graph.  
+- [ ] :space_invader: no trigger on enemy
+- [ ] question on die not working. 
+- [ ] remove download functionality. just make a popup. 
+- [ ] fix assessment not showing. 
+- [ ] upload/ddownload title congratulation. 
+- [ ] student new template, fake test input, load button loads a new game. 
+- [ ] student gallery should just be one button. 
+- [ ] student settings not working.
+- [ ] create quiz previous question box bigger and move add questions to the right. 
+
 
 ## Open architecture
 - :bangbang: How can plugins be created.
