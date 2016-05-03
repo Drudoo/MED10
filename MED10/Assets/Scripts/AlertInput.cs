@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AlertInput : MonoBehaviour {
 
@@ -31,11 +32,13 @@ public class AlertInput : MonoBehaviour {
 
 		if (mSavePressed) {
 			Debug.Log("SAVED");
+			Application.LoadLevel("Game");
 			mSavePressed = false;
 		}
 
 		if (mCancelPressed) {
 			Debug.Log("CANCEL");
+			Application.LoadLevel("Game");
 			mCancelPressed = false;
 		}
 	}

@@ -60,6 +60,7 @@ public class SaveQuestions : MonoBehaviour {
 		GameObject pq = GameObject.Find("Questions");
 		_prevQuestions = pq.GetComponent<Text>();
 		_prevQuestions.text = prevQstr;
+		deleteFile();
 
 	}
 

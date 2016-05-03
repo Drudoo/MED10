@@ -21,7 +21,7 @@ public class Gallery : MonoBehaviour {
 		FileInfo[] info = dir.GetFiles("*.*");
 
 		foreach (FileInfo f in info) {
-			//Debug.Log(Path.GetFileName(f.ToString()));
+			Debug.Log(Path.GetFileName(f.ToString()));
 			files.Add(Path.GetFileNameWithoutExtension(f.ToString()));
 		}
 	}
@@ -34,52 +34,63 @@ public class Gallery : MonoBehaviour {
 	        }
 
 			GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity,new Vector3(Screen.width / WIDTH, Screen.height / HEIGHT, 1));
-			GUILayout.BeginArea(new Rect(100,250,800,300));
-		    GUILayout.BeginHorizontal();
 
 
-			if (files.Count == 1) {
+
+
+			if (Application.loadedLevelName == "Gallery_student") {
+				GUILayout.BeginArea(new Rect(250,250,300,300));
+			    GUILayout.BeginHorizontal();
 				GUILayout.BeginVertical();
 		        if(GUILayout.Button(tex)) {
-		            Debug.Log("pressed Item " + files[0]);
-					ApplicationModel.currentLevel = files[0];
+		            Debug.Log("pressed Item " + files[files.Count-1]);
+					ApplicationModel.currentLevel = files[files.Count-1];
 					//SceneManager.LoadScene("Game");
 					SyncLoadLevel("Game");
 		        }
-				GUILayout.Label(files[0]);
+				GUILayout.Label(files[files.Count-1]);
 				GUILayout.EndVertical();
-			} else if (files.Count == 2) {
-				for (int i = 0; i < 2; i++) {
-					GUILayout.BeginVertical();
-			        if(GUILayout.Button(tex)) {
-			            Debug.Log("pressed Item " + files[i]);
-						ApplicationModel.currentLevel = files[i];
-						//SceneManager.LoadScene("Game");
-						SyncLoadLevel("Game");
-			        }
-					GUILayout.Label(files[i]);
-					GUILayout.EndVertical();
-				}
 			} else {
-				for (int i = files.Count; i --> totalImages;) {
-
+				GUILayout.BeginArea(new Rect(100,250,800,300));
+			    GUILayout.BeginHorizontal();
+				if (files.Count == 1) {
 					GUILayout.BeginVertical();
 			        if(GUILayout.Button(tex)) {
-			            Debug.Log("pressed Item " + files[i]);
-						ApplicationModel.currentLevel = files[i];
+			            Debug.Log("pressed Item " + files[0]);
+						ApplicationModel.currentLevel = files[0];
 						//SceneManager.LoadScene("Game");
 						SyncLoadLevel("Game");
 			        }
-					GUILayout.Label(files[i]);
+					GUILayout.Label(files[0]);
 					GUILayout.EndVertical();
+				} else if (files.Count == 2) {
+					for (int i = 0; i < 2; i++) {
+						GUILayout.BeginVertical();
+				        if(GUILayout.Button(tex)) {
+				            Debug.Log("pressed Item " + files[i]);
+							ApplicationModel.currentLevel = files[i];
+							//SceneManager.LoadScene("Game");
+							SyncLoadLevel("Game");
+				        }
+						GUILayout.Label(files[i]);
+						GUILayout.EndVertical();
+					}
+				} else {
+					for (int i = files.Count; i --> totalImages;) {
+
+						GUILayout.BeginVertical();
+				        if(GUILayout.Button(tex)) {
+				            Debug.Log("pressed Item " + files[i]);
+							ApplicationModel.currentLevel = files[i];
+							//SceneManager.LoadScene("Game");
+							SyncLoadLevel("Game");
+				        }
+						GUILayout.Label(files[i]);
+						GUILayout.EndVertical();
+					}
 				}
 			}
 
-
-
-		    foreach(string i in files) {
-
-		    }
 		    GUILayout.EndHorizontal();
 		    GUILayout.EndArea();
 		}

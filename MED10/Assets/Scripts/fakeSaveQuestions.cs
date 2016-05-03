@@ -48,6 +48,15 @@ public class fakeSaveQuestions : MonoBehaviour {
 			Debug.Log("File cannot be deleted.");
 		}
 	}
+	public void deleteQ() {
+		Debug.Log("Deleting " + filePath);
+		if (File.Exists(Application.persistentDataPath + "/" + "questions.txt")) {
+			Debug.Log("Deleting File...");
+			File.Delete(Application.persistentDataPath + "/" + "questions.txt");
+		} else {
+			Debug.Log("File cannot be deleted.");
+		}
+	}
 
 	private void printList(List<string> list) {
 		string line = "";

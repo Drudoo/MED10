@@ -45,25 +45,25 @@
 - [x] :skull: ~~respawn at the same place if answer right on dead question.~~ 
 - [x] ~~destroy scene when new is loaded, so old stuff is not there.~~ 
 - [x] ~~save student name~~
-- [ ] assessment based on the games result. Save that to file and load in to assessment scene.
-- [ ] dont show gallery before pressing download. 
+- [x] ~~assessment based on the games result. Save that to file and load in to assessment scene.~~
+- [x] ~~dont show gallery before pressing download.~~ 
 - [x] :bangbang: ~~six questions, four coins.~~ 
 - [x] ~~test question button (save questions to file, delete other file)~~
 - [ ] change date in file name to a random number. 
 - [ ] :bangbang: new scene when learning analytics is pressed with graph.  
 - [ ] :space_invader: no trigger on enemy
 - [ ] question on die not working. 
-- [ ] :exclamation: remove download functionality. just make a popup. 
+- [x] ~~:exclamation: remove download functionality. just make a popup.~~
 - [ ] :bangbang: fix assessment not showing for user. 
-- [ ] upload/ddownload title congratulation. 
-- [ ] :exclamation: student new template, fake test input, load button loads a new game. 
-- [ ] :exclamation: student gallery should just be one button. 
-- [ ] student settings not working.
-- [ ] :exclamation: create quiz previous question box bigger and move add questions to the right. 
+- [x] ~~upload/ddownload title congratulation.~~ 
+- [x] ~~:exclamation: student new template, fake test input, load button loads a new game.~~ 
+- [x] ~~:exclamation: student gallery should just be one button.~~
+- [x] ~~student settings not working.~~
+- [x] ~~:exclamation: create quiz previous question box bigger and move add questions to the right.~~ 
 - [ ] test every button/popup. 
-- [ ] :exclamation: Currently Story template is not available. 
-- [ ] :bangbang: when creating own questions should delete the previous one
-- [ ] :bangbang: Fix make game screen with own questions. 
+- [x] ~~:exclamation: Currently Story template is not available.~~ 
+- [x] ~~:bangbang: when creating own questions should delete the previous one~~
+- [x] ~~:bangbang: Fix make game screen with own questions.~~ 
 - [ ] :exclamation: Fix fake assessment numbers
 - [ ] :exclamation: assessment popup fix. 
 
@@ -115,3 +115,8 @@ Build and Run normally from Unity.
 
 
 	adb logcat
+    
+   
+- Only get current app data
+
+	db logcat | grep `adb shell ps | grep com.drudoo.med10 | cut -c10-15`

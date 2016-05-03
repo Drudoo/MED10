@@ -65,10 +65,10 @@ public class AskQuestion : MonoBehaviour {
 
 		//string fileName = year+month+date+".txt";
 		string fileName = ApplicationModel.currentLevel;
-		//Debug.Log(uniqueID);
+		Debug.Log("FileName: " + fileName);
 
 		string filePath = Application.persistentDataPath + "/" + fileName + ".txt";
-		Debug.Log(filePath);
+		Debug.Log("FilePath: " + filePath);
 		return filePath;
 	}
 
