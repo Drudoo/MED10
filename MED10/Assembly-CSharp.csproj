@@ -45,6 +45,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\OverAllScorePie.cs" />
+     <Compile Include="Assets\PieGraph.cs" />
      <Compile Include="Assets\Scripts\AlertInput.cs" />
      <Compile Include="Assets\Scripts\AlertPopup.cs" />
      <Compile Include="Assets\Scripts\AndroidDialog.cs" />

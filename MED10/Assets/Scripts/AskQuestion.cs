@@ -54,7 +54,6 @@ public class AskQuestion : MonoBehaviour {
 			line = line + temp;
 		}
 		Debug.Log("Printing list: " + line);
-
 	}
 
 	private string getFilePath() {

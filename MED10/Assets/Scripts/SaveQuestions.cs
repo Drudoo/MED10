@@ -52,6 +52,7 @@ public class SaveQuestions : MonoBehaviour {
 		uniqueID = int.Parse(date)+int.Parse(month)+int.Parse(year);
 		fileName = year+month+date+hour+min+".txt";
 		//Debug.Log(uniqueID);
+		Debug.Log(System.DateTime.Now.ToString("ddMMyyyhhmmss"));
 		filePath = Application.persistentDataPath + "/" + fileName;
 		ApplicationModel.currentLevel = fileName;
 		Debug.Log(valueQ + " " + valueA);
