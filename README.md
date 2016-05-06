@@ -74,10 +74,10 @@
 
 ## new to do
 
-- [ ] Fix make game scene not showing questions.
+- [x] ~~Fix make game scene not showing questions.~~
 - [ ] add andrea stuff to assessment
 - [ ] add everything to github.
-- [ ] move assessemnt search bar
+- [x] ~~move assessemnt search bar~~
 
 ## Report
 

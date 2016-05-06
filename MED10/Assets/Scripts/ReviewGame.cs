@@ -25,9 +25,10 @@ public class ReviewGame : MonoBehaviour {
 		//uniqueID = int.Parse(date)+int.Parse(month)+int.Parse(year);
 		//fileName = year+month+date+hour+min+".txt";
 		//filePath = Application.persistentDataPath + "/" + fileName;
-		filePath = ApplicationModel.currentLevel + ".txt";
+		fileName = ApplicationModel.currentLevel;
 		qaText = q_and_a.GetComponent<Text>().text;
-		qaText+=" "+ year+month+date+hour+min;
+		qaText+=" "+ ApplicationModel.currentLevel;
+		filePath = Application.persistentDataPath + "/" + fileName;
 		//q_and_a.GetComponent<Text>().text=qaText;
 		loadQuestions();
 		q_and_a.GetComponent<Text>().text=qaText;
@@ -50,7 +51,7 @@ public class ReviewGame : MonoBehaviour {
 					qaText+="\n"+temp[i]+"\t"+answer;
 				}
 			} else {
-				Debug.Log("File fileName" + " does not exist");
+				Debug.Log("File fileName" + " does not exist: " + filePath);
 			}
 		} catch (System.Exception e) {
 			Debug.Log(e);
