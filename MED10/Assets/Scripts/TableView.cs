@@ -70,6 +70,7 @@ public class TableView : MonoBehaviour {
 		#endif
 
 		scores = ApplicationModel.assessment;
+		Debug.Log(ApplicationModel.assessment);
 
 		//scores = "Student name\tGame id\tGame name\tTime\nDeborah Wells\t509579\tQuiz\tApr 14 15:27:36 2016 GMT\nNora Terry\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nCynthia Grant\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nJonathan Jones\t307371\tPuzzle\tJun 19 18:27:36 2013 GMT\nEarl Washington\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nJacqueline Foster\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nDeborah Wells\t509579\tQuiz\tApr 14 15:27:36 2016 GMT\nNora Terry\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nCynthia Grant\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nJonathan Jones\t307371\tPuzzle\tJun 19 18:27:36 2013 GMT\nEarl Washington\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nJacqueline Foster\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nDeborah Wells\t509579\tQuiz\tApr 14 15:27:36 2016 GMT\nNora Terry\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nCynthia Grant\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nJonathan Jones\t307371\tPuzzle\tJun 19 18:27:36 2013 GMT\nEarl Washington\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nJacqueline Foster\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nDeborah Wells\t509579\tQuiz\tApr 14 15:27:36 2016 GMT\nNora Terry\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nCynthia Grant\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nJonathan Jones\t307371\tPuzzle\tJun 19 18:27:36 2013 GMT\nEarl Washington\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nJacqueline Foster\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nDeborah Wells\t509579\tQuiz\tApr 14 15:27:36 2016 GMT\nNora Terry\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nCynthia Grant\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nJonathan Jones\t307371\tPuzzle\tJun 19 18:27:36 2013 GMT\nEarl Washington\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nJacqueline Foster\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nDeborah Wells\t509579\tQuiz\tApr 14 15:27:36 2016 GMT\nNora Terry\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nCynthia Grant\t509579\tQuiz\tJun 19 18:27:36 2013 GMT\nJonathan Jones\t307371\tPuzzle\tJun 19 18:27:36 2013 GMT\nEarl Washington\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\nJacqueline Foster\t255414\tAdventure\tApr 14 15:27:36 2016 GMT\n";
 
@@ -174,7 +175,7 @@ public class TableView : MonoBehaviour {
 						if(GUILayout.Button(fields[0], GUILayout.Width(w1))) {
 							showPopUp = true;
 							mTitle=fields[0];
-							mMessage=fields[1] + " : " + fields[2] + " : "  + fields[3];
+							mMessage=("GameID: " + fields[1] + " -> Score: " + fields[2] + " -> Right Answers: " + fields[2] + " -> Coins: " + fields[4] + " -> Boxes: " + fields[5] + " -> Time: " + fields[6]);
 						}
 					}
 					GUILayout.Label(fields[1], GUILayout.Width(w2));
@@ -203,8 +204,11 @@ public class TableView : MonoBehaviour {
 
 		string temp = studentName.text;
 
+
+//Name, Game ID, Score, Right Answer, Coins, Boxes, Time
+
 		int index = list.FindIndex(item => item.Contains(temp));
-		Debug.Log("Name: " + list[index] + " -> GameID: " + list[index+1] + " -> GameName: " + list[index+2] + " -> Time: " + list[index+3]);
+		Debug.Log("Name: " + list[index] + " -> GameID: " + list[index+1] + " -> Score: " + list[index+2] + " -> Right Answers: " + list[index+3] + " -> Coins: " + list[index+4] + " -> Boxes: " + list[index+5] + " -> Time: " + list[index+6]);
 
 		showPopUp=true;
 
@@ -213,7 +217,7 @@ public class TableView : MonoBehaviour {
 			mMessage = "Please enter the full name of the student you want to search for.";
 		} else {
 			mTitle=list[index];
-			mMessage=list[index+1] + " : " + list[index+2] + " : "  + list[index+3];
+			mMessage="Name: " + list[index] + " -> GameID: " + list[index+1] + " -> Score: " + list[index+2] + " -> Right Answers: " + list[index+3] + " -> Coins: " + list[index+4] + " -> Boxes: " + list[index+5] + " -> Time: " + list[index+6];
 		}
 	}
 

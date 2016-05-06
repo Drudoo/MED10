@@ -46,12 +46,14 @@ public class SaveQuestions : MonoBehaviour {
 		string date = System.DateTime.Now.ToString("dd");
 		string month = System.DateTime.Now.ToString("MM");
 		string year = System.DateTime.Now.ToString("yyyy");
-		//Debug.Log(date + " " + month + " " + year);
+		string hour = System.DateTime.Now.ToString("hh");
+		string min = System.DateTime.Now.ToString("mm");
+		Debug.Log(date + " " + month + " " + year + " " + hour + " " + min);
 		uniqueID = int.Parse(date)+int.Parse(month)+int.Parse(year);
-		fileName = year+month+date+".txt";
+		fileName = year+month+date+hour+min+".txt";
 		//Debug.Log(uniqueID);
 		filePath = Application.persistentDataPath + "/" + fileName;
-
+		ApplicationModel.currentLevel = fileName;
 		Debug.Log(valueQ + " " + valueA);
 		label = GameObject.Find("question_title");
 		_label = label.GetComponent<Text>();

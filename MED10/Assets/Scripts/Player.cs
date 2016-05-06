@@ -317,6 +317,7 @@ public class Player : MonoBehaviour {
 
 		if (Hit.tag == "Enemy") {
 			isDead = true;
+			Debug.Log("Dead");
 		}
 
 		if (controller.collisions.above && Hit.tag == "QuestionBox" && !Hit.gameObject.GetComponent<Box>().hit) {

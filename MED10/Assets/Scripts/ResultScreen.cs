@@ -22,16 +22,21 @@ public class ResultScreen : MonoBehaviour {
 		rA = ApplicationModel.rightAnswers;
 		wA = ApplicationModel.wrongAnswers;
 		c = ApplicationModel.coins;
+		b = ApplicationModel.boxes;
 
 		boxes.text = ApplicationModel.boxes.ToString ();
 		Coins.text = ApplicationModel.coins.ToString ();
 		correctAnswers.text = ApplicationModel.rightAnswers.ToString ();
 		wrongAnswers.text = ApplicationModel.wrongAnswers.ToString ();
-		float temp = Mathf.Round (((rA-wA+c)/9*100));
+		float temp = Mathf.Abs(Mathf.Round (((rA-wA+c)/9*100)));
 		Score.text = temp.ToString() + "%";
 		Debug.Log(temp);
 
-		ApplicationModel.assessment+=(ApplicationModel.username + "\t" + ApplicationModel.currentLevel + "\t" + temp.ToString()+"%" + "\t" + System.DateTime.Now.ToString("yyyy-MM-ddTHH:mm:sszzz") + "\n");
+		//Name, Game ID, Score, Right Answer, Coins, Boxes, Time
+
+		ApplicationModel.assessment+=(ApplicationModel.username + "\t" + ApplicationModel.currentLevel + "\t" + temp.ToString()+"%" + "\t" + rA + "\t" + c + "\t" + b + "\t" + System.DateTime.Now.ToString("yyyy-MM-ddTHH:mm:sszzz") + "\n");
+
+		Debug.Log(ApplicationModel.assessment);
 
 	}
 	// Update is called once per frame

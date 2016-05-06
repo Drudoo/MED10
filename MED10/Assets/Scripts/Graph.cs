@@ -30,9 +30,9 @@ float rAnswersAvg=0;
 		lRend.SetColors(c1,c2);
 		lRend.SetWidth(0.5f, 0.5f);
 		lRend.SetVertexCount(vertices.Length);
-		for (int i=0; i<vertices.Length; i++)
-                 lRend.SetPosition(i, vertices[i]);
-
+		for (int i=0; i<vertices.Length; i++) {
+			lRend.SetPosition(i, vertices[i]);
+		}
 		return true;
 	}
 

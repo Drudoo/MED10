@@ -67,7 +67,7 @@ public class AskQuestion : MonoBehaviour {
 		string fileName = ApplicationModel.currentLevel;
 		Debug.Log("FileName: " + fileName);
 
-		string filePath = Application.persistentDataPath + "/" + fileName + ".txt";
+		string filePath = Application.persistentDataPath + "/" + fileName;
 		Debug.Log("FilePath: " + filePath);
 		return filePath;
 	}

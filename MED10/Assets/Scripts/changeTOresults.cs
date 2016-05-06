@@ -8,6 +8,10 @@ public class changeTOresults : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D Hit)
 	{
 		Application.LoadLevel ("GameFinished");
+
+
+		
+
 		#if UNITY_EDITOR
 
 		#else

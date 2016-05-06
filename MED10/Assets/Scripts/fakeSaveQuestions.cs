@@ -14,8 +14,11 @@ public class fakeSaveQuestions : MonoBehaviour {
 		string date = System.DateTime.Now.ToString("dd");
 		string month = System.DateTime.Now.ToString("MM");
 		string year = System.DateTime.Now.ToString("yyyy");
+		string hour = System.DateTime.Now.ToString("hh");
+		string min = System.DateTime.Now.ToString("mm");
+
 		//Debug.Log(date + " " + month + " " + year);
-		fileName = year+month+date+".txt";
+		fileName = year+month+date+hour+min+".txt";
 		//Debug.Log(uniqueID);
 		filePath = Application.persistentDataPath + "/" + fileName;
 	}

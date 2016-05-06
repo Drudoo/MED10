@@ -19,15 +19,19 @@ public class ReviewGame : MonoBehaviour {
 		string date = System.DateTime.Now.ToString("dd");
 		string month = System.DateTime.Now.ToString("MM");
 		string year = System.DateTime.Now.ToString("yyyy");
-		uniqueID = int.Parse(date)+int.Parse(month)+int.Parse(year);
-		fileName = year+month+date+".txt";
-		filePath = Application.persistentDataPath + "/" + fileName;
+		string hour = System.DateTime.Now.ToString("hh");
+		string min = System.DateTime.Now.ToString("mm");
+
+		//uniqueID = int.Parse(date)+int.Parse(month)+int.Parse(year);
+		//fileName = year+month+date+hour+min+".txt";
+		//filePath = Application.persistentDataPath + "/" + fileName;
+		filePath = ApplicationModel.currentLevel + ".txt";
 		qaText = q_and_a.GetComponent<Text>().text;
-		qaText+=" "+ year+month+date;
+		qaText+=" "+ year+month+date+hour+min;
 		//q_and_a.GetComponent<Text>().text=qaText;
 		loadQuestions();
 		q_and_a.GetComponent<Text>().text=qaText;
-		ApplicationModel.currentLevel = year+month+date;
+		//ApplicationModel.currentLevel = year+month+date;
 	}
 
 	private void loadQuestions() {

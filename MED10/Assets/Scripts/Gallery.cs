@@ -44,7 +44,7 @@ public class Gallery : MonoBehaviour {
 				GUILayout.BeginVertical();
 		        if(GUILayout.Button(tex)) {
 		            Debug.Log("pressed Item " + files[files.Count-1]);
-					ApplicationModel.currentLevel = files[files.Count-1];
+					ApplicationModel.currentLevel = files[files.Count-1] + ".txt";
 					//SceneManager.LoadScene("Game");
 					SyncLoadLevel("Game");
 		        }
@@ -57,7 +57,7 @@ public class Gallery : MonoBehaviour {
 					GUILayout.BeginVertical();
 			        if(GUILayout.Button(tex)) {
 			            Debug.Log("pressed Item " + files[0]);
-						ApplicationModel.currentLevel = files[0];
+						ApplicationModel.currentLevel = files[0] + ".txt";
 						//SceneManager.LoadScene("Game");
 						SyncLoadLevel("Game");
 			        }
@@ -68,7 +68,7 @@ public class Gallery : MonoBehaviour {
 						GUILayout.BeginVertical();
 				        if(GUILayout.Button(tex)) {
 				            Debug.Log("pressed Item " + files[i]);
-							ApplicationModel.currentLevel = files[i];
+							ApplicationModel.currentLevel = files[i] + ".txt";
 							//SceneManager.LoadScene("Game");
 							SyncLoadLevel("Game");
 				        }
@@ -81,7 +81,7 @@ public class Gallery : MonoBehaviour {
 						GUILayout.BeginVertical();
 				        if(GUILayout.Button(tex)) {
 				            Debug.Log("pressed Item " + files[i]);
-							ApplicationModel.currentLevel = files[i];
+							ApplicationModel.currentLevel = files[i] + ".txt";
 							//SceneManager.LoadScene("Game");
 							SyncLoadLevel("Game");
 				        }

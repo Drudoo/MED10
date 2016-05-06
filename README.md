@@ -64,14 +64,20 @@
 - [x] ~~:exclamation: Currently Story template is not available.~~ 
 - [x] ~~:bangbang: when creating own questions should delete the previous one~~
 - [x] ~~:bangbang: Fix make game screen with own questions.~~ 
-- [ ] :exclamation: Fix fake assessment numbers
+- [x] ~~:exclamation: Fix fake assessment numbers~~
 - [ ] :exclamation: assessment popup fix. 
+- [ ] :bangbang: fix hour min second for file name. 
 
 
 ## Open architecture
 - :bangbang: How can plugins be created.
 
-## Questions
+## new to do
+
+- [ ] Fix make game scene not showing questions.
+- [ ] add andrea stuff to assessment
+- [ ] add everything to github.
+- [ ] move assessemnt search bar
 
 ## Report
 
@@ -80,6 +86,7 @@
 ## LaTeX
 
 - Fix Other Sources in report
+- write 25 pages of implementation
 
 
 ## Problems :ant: :heavy_plus_sign: Bugs :bug:
