@@ -208,16 +208,24 @@ public class TableView : MonoBehaviour {
 //Name, Game ID, Score, Right Answer, Coins, Boxes, Time
 
 		int index = list.FindIndex(item => item.Contains(temp));
-		Debug.Log("Name: " + list[index] + " -> GameID: " + list[index+1] + " -> Score: " + list[index+2] + " -> Right Answers: " + list[index+3] + " -> Coins: " + list[index+4] + " -> Boxes: " + list[index+5] + " -> Time: " + list[index+6]);
 
-		showPopUp=true;
 
-		if (temp == "") {
-			mTitle = "Enter Student Name";
-			mMessage = "Please enter the full name of the student you want to search for.";
+		if (index != -1) {
+			Debug.Log("Name: " + list[index] + " -> GameID: " + list[index+1] + " -> Score: " + list[index+2] + " -> Right Answers: " + list[index+3] + " -> Coins: " + list[index+4] + " -> Boxes: " + list[index+5] + " -> Time: " + list[index+6]);
+			showPopUp=true;
+
+			if (temp == "") {
+				mTitle = "Enter Student Name";
+				mMessage = "Please enter the full name of the student you want to search for.";
+			} else {
+				mTitle=list[index];
+				mMessage="Name: " + list[index] + " -> GameID: " + list[index+1] + " -> Score: " + list[index+2] + " -> Right Answers: " + list[index+3] + " -> Coins: " + list[index+4] + " -> Boxes: " + list[index+5] + " -> Time: " + list[index+6];
+			}
 		} else {
-			mTitle=list[index];
-			mMessage="Name: " + list[index] + " -> GameID: " + list[index+1] + " -> Score: " + list[index+2] + " -> Right Answers: " + list[index+3] + " -> Coins: " + list[index+4] + " -> Boxes: " + list[index+5] + " -> Time: " + list[index+6];
+			showPopUp=true;
+			Debug.Log("Index NOT found!");
+			mTitle = "Student not found!";
+			mMessage = "Please enter the full name of the student you want to search for.";
 		}
 	}
 
