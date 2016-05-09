@@ -13,7 +13,7 @@ public class Gallery : MonoBehaviour {
 	static float HEIGHT = Screen.height/2;
 
 	public Texture tex;
-
+	private GUIStyle guiStyle = new GUIStyle();
 	private int totalImages = 0;
 
 	void Start() {
@@ -35,7 +35,7 @@ public class Gallery : MonoBehaviour {
 
 			GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity,new Vector3(Screen.width / WIDTH, Screen.height / HEIGHT, 1));
 
-
+			guiStyle.fontSize = 20;
 
 
 			if (Application.loadedLevelName == "Gallery_student") {
@@ -48,7 +48,7 @@ public class Gallery : MonoBehaviour {
 					//SceneManager.LoadScene("Game");
 					SyncLoadLevel("Game");
 		        }
-				GUILayout.Label(files[files.Count-1]);
+				GUILayout.Label(files[files.Count-1], guiStyle);
 				GUILayout.EndVertical();
 			} else {
 				GUILayout.BeginArea(new Rect(100,250,800,300));
@@ -61,7 +61,7 @@ public class Gallery : MonoBehaviour {
 						//SceneManager.LoadScene("Game");
 						SyncLoadLevel("Game");
 			        }
-					GUILayout.Label(files[0]);
+					GUILayout.Label(files[0], guiStyle);
 					GUILayout.EndVertical();
 				} else if (files.Count == 2) {
 					for (int i = 0; i < 2; i++) {
@@ -72,7 +72,7 @@ public class Gallery : MonoBehaviour {
 							//SceneManager.LoadScene("Game");
 							SyncLoadLevel("Game");
 				        }
-						GUILayout.Label(files[i]);
+						GUILayout.Label(files[i], guiStyle);
 						GUILayout.EndVertical();
 					}
 				} else {
@@ -85,7 +85,7 @@ public class Gallery : MonoBehaviour {
 							//SceneManager.LoadScene("Game");
 							SyncLoadLevel("Game");
 				        }
-						GUILayout.Label(files[i]);
+						GUILayout.Label(files[i], guiStyle);
 						GUILayout.EndVertical();
 					}
 				}
