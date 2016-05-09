@@ -85,6 +85,7 @@
      <Compile Include="Assets\Scripts\fakeSaveQuestions.cs" />
      <Compile Include="Assets\Scripts\ftp.cs" />
      <Compile Include="Assets\Scripts\scrollRect.cs" />
+     <Compile Include="Assets\testGallery.cs" />
      <None Include="Assets\Materials\BumpedTranslucent.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

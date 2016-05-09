@@ -81,7 +81,8 @@
 
 ## Report
 
-- clarify advantages and disadvantages
+- [ ] clarify advantages and disadvantages
+- [ ] Make a comparison table from SOTA to our implementation. 
 
 ## LaTeX
 
