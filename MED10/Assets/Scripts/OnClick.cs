@@ -26,7 +26,7 @@ public class OnClick : MonoBehaviour {
 		public void showWindow(string newInfo) {
 			Info = newInfo;
 			username="Enter Username";
-			password="";
+			password="Enter Password";
 			GameObject eduB = GameObject.Find("Educator");
 			_eduB = eduB.GetComponent<Button>();
 			GameObject stuB = GameObject.Find("Student");
