@@ -28,7 +28,7 @@ public class ResultScreen : MonoBehaviour {
 		Coins.text = ApplicationModel.coins.ToString ();
 		correctAnswers.text = ApplicationModel.rightAnswers.ToString ();
 		wrongAnswers.text = ApplicationModel.wrongAnswers.ToString ();
-		float temp = Mathf.Abs(Mathf.Round (((rA-wA+c)/9*100)));
+		float temp = Mathf.Abs(Mathf.Round (((rA-(6-rA)+c)/9*100)));
 		Score.text = temp.ToString() + "%";
 		Debug.Log(temp);
 

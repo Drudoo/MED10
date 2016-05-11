@@ -1,5 +1,12 @@
 # Unity
 
+## LaTeX
+
+- [ ] Fix Other Sources in report
+- [ ] clarify advantages and disadvantages
+- [ ] Make a comparison table from SOTA to our implementation. 
+
+
 ## To Do
 
 - [x] ~~Fix player through platform~~
@@ -78,16 +85,6 @@
 - [ ] add andrea stuff to assessment
 - [ ] add everything to github.
 - [x] ~~move assessemnt search bar~~
-
-## Report
-
-- [ ] clarify advantages and disadvantages
-- [ ] Make a comparison table from SOTA to our implementation. 
-
-## LaTeX
-
-- Fix Other Sources in report
-- write 25 pages of implementation
 
 
 ## Problems :ant: :heavy_plus_sign: Bugs :bug:

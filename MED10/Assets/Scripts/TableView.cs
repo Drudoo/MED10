@@ -174,8 +174,8 @@ public class TableView : MonoBehaviour {
 					} else {
 						if(GUILayout.Button(fields[0], GUILayout.Width(w1))) {
 							showPopUp = true;
-							mTitle=fields[0];
-							mMessage=("GameID: " + fields[1] + " -> Score: " + fields[2] + " -> Right Answers: " + fields[2] + " -> Coins: " + fields[4] + " -> Boxes: " + fields[5] + " -> Time: " + fields[6]);
+							mTitle = fields[0];
+							mMessage = ("Detailed information for " + fields[0] + " to be displayed here."/*"GameID: " + fields[1] + " -> Score: " + fields[2] + " -> Right Answers: " + fields[2] + " -> Coins: " + fields[4] + " -> Boxes: " + fields[5] + " -> Time: " + fields[6]*/);
 						}
 					}
 					GUILayout.Label(fields[1], GUILayout.Width(w2));
