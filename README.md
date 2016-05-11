@@ -3,8 +3,10 @@
 ## LaTeX
 
 - [ ] Fix Other Sources in report
-- [ ] clarify advantages and disadvantages
+- [ ] clarify advantages and disadvantages of our app in the end of design. 
 - [ ] Make a comparison table from SOTA to our implementation. 
+- [ ] Make a kind of delimitation (no title) in the start of proof of concept, where we explain why use a quiz and so on. 
+- [ ] conclusion of design. 
 
 
 ## To Do
@@ -82,8 +84,8 @@
 ## new to do
 
 - [x] ~~Fix make game scene not showing questions.~~
-- [ ] add andrea stuff to assessment
-- [ ] add everything to github.
+- [x] ~~add andrea stuff to assessment~~
+- [x] ~~add everything to github.~~
 - [x] ~~move assessemnt search bar~~
 
 
