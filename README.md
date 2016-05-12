@@ -8,9 +8,9 @@
 - [ ] Make a kind of delimitation (no title) in the start of proof of concept, where we explain why use a quiz and so on. 
 - [ ] conclusion of design. 
 - [ ] educator template in design.
-- [ ] in the beginning of application (implementation) write why we use unity / other apps.  
+- [x] ~~in the beginning of application (implementation) write why we use unity / other apps.~~  
 - [ ] mention in test that a participant mentioned [woop](http://spejderne.dk/aktuelt/woop/). 
-- [ ] code for taking the quesitons from text box and save it to a file. 
+- [x] ~~code for taking the quesitons from text box and save it to a file.~~ 
 - [x] ~~explain how the table is made and not so much the scroll function.~~
 - [ ] Target group
 - [ ] Multimodal plug ins for design. 
