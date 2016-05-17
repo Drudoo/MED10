@@ -3,8 +3,8 @@
 ## LaTeX
 
 - [ ] Fix Other Sources in report
-- [ ] clarify advantages and disadvantages of our app in the end of design. 
-- [ ] Make a comparison table from SOTA to our implementation. 
+- [x] ~~clarify advantages and disadvantages of our app in the end of design.~~ 
+- [x] ~~Make a comparison table from SOTA to our implementation.~~ 
 - [ ] Make a kind of delimitation (no title) in the start of proof of concept, where we explain why use a quiz and so on. 
 - [ ] conclusion of design. 
 - [ ] educator template in design.
@@ -13,9 +13,11 @@
 - [x] ~~code for taking the quesitons from text box and save it to a file.~~ 
 - [x] ~~explain how the table is made and not so much the scroll function.~~
 - [ ] Target group
-- [ ] Multimodal plug ins for design. 
+- [ ] Multimodal plug ins for design. Give an example of eg leap motion in game. speech can be used for homework to answer questions. connect it to the plugin button for the student. Make specific examples to our design.  
 
+## Things to read 
 
+- [ ] Defining  gamification:  a  service  marketing  perspective
 
 ## To Do
 
