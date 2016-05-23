@@ -1,111 +1,20 @@
-# Unity
+# Medialogy 10th Semester Thesis
 
-## LaTeX
+> Educational game made in Unity using C#
 
-- [ ] Fix Other Sources in report
-- [x] ~~clarify advantages and disadvantages of our app in the end of design.~~ 
-- [x] ~~Make a comparison table from SOTA to our implementation.~~ 
-- [ ] Make a kind of delimitation (no title) in the start of proof of concept, where we explain why use a quiz and so on. 
-- [ ] conclusion of design. 
-- [ ] educator template in design.
-- [x] ~~in the beginning of application (implementation) write why we use unity / other apps.~~  
-- [ ] mention in test that a participant mentioned [woop](http://spejderne.dk/aktuelt/woop/). 
-- [x] ~~code for taking the quesitons from text box and save it to a file.~~ 
-- [x] ~~explain how the table is made and not so much the scroll function.~~
-- [ ] Target group
-- [ ] Multimodal plug ins for design. Give an example of eg leap motion in game. speech can be used for homework to answer questions. connect it to the plugin button for the student. Make specific examples to our design.  
+	Due on May 26th, 2016
+	[Frederik Vanggaard](https://github.com/drudoo) & [Andrea Keiser](https://github.com/dedepi) 
 
-## Things to read 
+# Installation
+The appliation is written for Android tablets and tested on the Nexus 7 (2013) and the Nexus 9. 
+The application does not require any specific libraries or additional support from outside of Unity.
+Ever scene in the Scenes folder except for ``Game_fred`` should be added to the build settings. 
 
-- [ ] Defining  gamification:  a  service  marketing  perspective
+## Bugs
 
-## To Do
-
-- [x] ~~Fix player through platform~~
-- [x] ~~:exclamation: Joystick size. No down button just two arrows.~~
-- [x] ~~:bangbang: Table view size~~
-- [x] ~~Game z distance on button and player~~
-- [x] ~~:bangbang: Save questions to file~~
-- [x] ~~:bangbang: Load question in to game~~
-- [x] ~~10 questions~~
-- [x] ~~3 answers per question~~
-- [x] ~~:confused: add correct answer to questions~~
-- [x] ~~:bangbang: have 15 questions/coins and randomly give either question or coin.~~
-- [x] ~~:bangbang: Enemy. Just walk around, when you collide you die.~~
-- [x] ~~Question when you die.~~
-- [x] ~~Save one question for when they die.~~
-- [x] ~~settings: sound on/off~~
-- [x] ~~Gallery: Previous games~~
-- [x] ~~Upload: progess bar~~
-- [x] ~~Download: Search for other games. Hard code games we made. Put them in to gallery when downloaded.~~
-- [ ] Profile: Username, email and so on (look at report)
-- [x] ~~:exclamation: ID for each game and you can add a name.~~
-- [x] ~~:exclamation: Add game name~~
-- [x] :exclamation: ~~No make game.~~
-- [x] :exclamation: ~~Search in table.~~
-- [x] ~~:exclamation: Popup saying game ID and questions and a button that says access game.~~
-- [x] ~~Student: Add game ID. Load game.~~
-	- [x] ~~Plugins~~
-	- [x] ~~Achievements~~
-- [x] :rage: ~~Student: new template shows games with name and id.~~
-- [x] :sweat: ~~Dont show question when box is coin.~~
-- [x] ~~Grow button back and make door able to close again.~~
-- [x] :bug: ~~fix CameraFollow script error.~~  
-- [ ] :bug: fix enemy quad/raycast script.
-- [x] :bug: ~~fix texture length.~~
-- [x] :bug: ~~fix platform height so enemies can walk over.~~  
-- [x] :exclamation: ~~only one correct answerC~~
-- [x] ~~replace question buttons with boxes.~~
-- [x] ~~display questions next to where you save them.~~
-- [x] ~~remove toggle box after the 10th questions.~~
-- [ ] :mortar_board: change educator icon size.
-- [x] :sound: ~~add sound~~
-- [x] :mute: ~~make sound button work.~~  
-- [x] :skull: ~~respawn at the same place if answer right on dead question.~~ 
-- [x] ~~destroy scene when new is loaded, so old stuff is not there.~~ 
-- [x] ~~save student name~~
-- [x] ~~assessment based on the games result. Save that to file and load in to assessment scene.~~
-- [x] ~~dont show gallery before pressing download.~~ 
-- [x] :bangbang: ~~six questions, four coins.~~ 
-- [x] ~~test question button (save questions to file, delete other file)~~
-- [ ] change date in file name to a random number. 
-- [ ] :bangbang: new scene when learning analytics is pressed with graph.  
-- [ ] :space_invader: no trigger on enemy
-- [ ] question on die not working. 
-- [x] ~~:exclamation: remove download functionality. just make a popup.~~
-- [ ] :bangbang: fix assessment not showing for user. 
-- [x] ~~upload/ddownload title congratulation.~~ 
-- [x] ~~:exclamation: student new template, fake test input, load button loads a new game.~~ 
-- [x] ~~:exclamation: student gallery should just be one button.~~
-- [x] ~~student settings not working.~~
-- [x] ~~:exclamation: create quiz previous question box bigger and move add questions to the right.~~ 
-- [ ] test every button/popup. 
-- [x] ~~:exclamation: Currently Story template is not available.~~ 
-- [x] ~~:bangbang: when creating own questions should delete the previous one~~
-- [x] ~~:bangbang: Fix make game screen with own questions.~~ 
-- [x] ~~:exclamation: Fix fake assessment numbers~~
-- [ ] :exclamation: assessment popup fix. 
-- [ ] :bangbang: fix hour min second for file name. 
-
-
-## Open architecture
-- :bangbang: How can plugins be created.
-
-## new to do
-
-- [x] ~~Fix make game scene not showing questions.~~
-- [x] ~~add andrea stuff to assessment~~
-- [x] ~~add everything to github.~~
-- [x] ~~move assessemnt search bar~~
-
-
-## Problems :ant: :heavy_plus_sign: Bugs :bug:
-
-- :zap: UniqueID is the current date, so working on a quiz at mightnight can *potentially* cause problems.
-- :rage: Enter game name is not native to android. Fix later.
-	- :imp: text field is there, but cant get the value.
-- :space_invader: enemies walk between obstacles and not between waypoints.
-- :zap: Hide MakeGame and Print on android again. 
+- UniqueID is the current date, so working on a quiz at mightnight can *potentially* cause problems.
+- Enter game name is not native to android. Fix later.
+- Enemies walk between obstacles and not between waypoints.
 - You can dismiss questions on android. 
 
 ## Build wirelessly to Android (Mac)
@@ -137,3 +46,28 @@ Build and Run normally from Unity.
 - Only get current app data
 
 	db logcat | grep `adb shell ps | grep com.drudoo.med10 | cut -c10-15`
+
+
+# License
+
+The MIT License (MIT)
+
+Copyright (c) 2016 Frederik Vanggaard
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
