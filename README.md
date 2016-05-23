@@ -23,7 +23,7 @@ Ever scene in the Scenes folder except for ``Game_fred`` should be added to the 
 - Install ``adb``:
 
 
-	brew install android-platform-tools
+    brew install android-platform-tools
 
 
 Plug in device:
@@ -41,12 +41,12 @@ Build and Run normally from Unity.
 - Using ``adb``:
 
 
-	adb logcat
+    adb logcat
     
    
 - Only get current app data
 
-	db logcat | grep `adb shell ps | grep com.drudoo.med10 | cut -c10-15`
+    db logcat | grep `adb shell ps | grep com.drudoo.med10 | cut -c10-15`
 
 
 # License
