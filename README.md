@@ -2,8 +2,9 @@
 
 > Educational game made in Unity using C#
 
-	Due on May 26th, 2016
-	[Frederik Vanggaard](https://github.com/drudoo) & [Andrea Keiser](https://github.com/dedepi) 
+> Due on May 26th, 2016
+
+> [Frederik Vanggaard](https://github.com/drudoo) & [Andrea Keiser](https://github.com/dedepi) 
 
 # Installation
 The appliation is written for Android tablets and tested on the Nexus 7 (2013) and the Nexus 9. 
