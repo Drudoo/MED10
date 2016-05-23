@@ -62,11 +62,6 @@ float rAnswersAvg=0;
 
 		string[] lines = Regex.Split(ApplicationModel.assessment, "[\\n]");
 
-		//LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
-		//lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
-		//lineRenderer.SetWidth(0.5f,0.5f);
-		//lineRenderer.SetColors(c1,c2);
-
 		for (int i = 1; i < lines.Length-1; i++) {
 			Debug.Log(lines[i]);
 			string[] fields = Regex.Split(lines[i], "[\\t]");
@@ -91,19 +86,5 @@ float rAnswersAvg=0;
 
 		VERTICES_Right = new Vector3[2] {new Vector3(1,0,0), new Vector3(1,rAnswersAvg,0)};
 
-		/*
-		lineRenderer.SetPosition(0, new Vector3(0, 0, 0));
-		lineRenderer.SetPosition(1, new Vector3(0, System.Convert.ToSingle(scoreAvg)*0.05f, 0));
-
-
-		LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
-		lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
-		lineRenderer.SetWidth(0.5f,0.5f);
-		lineRenderer.SetColors(c1,c2);
-
-		lineRenderer.SetPosition(0, new Vector3(1, 0, 0));
-		lineRenderer.SetPosition(1, new Vector3(1, System.Convert.ToSingle(rAnswersAvg)*0.05f, 0));
-
-		*/
 	}
 }

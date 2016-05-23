@@ -57,12 +57,7 @@ public class AskQuestion : MonoBehaviour {
 	}
 
 	private string getFilePath() {
-		//string date = System.DateTime.Now.ToString("dd");
-		//string month = System.DateTime.Now.ToString("MM");
-		//string year = System.DateTime.Now.ToString("yyyy");
-		//Debug.Log(date + " " + month + " " + year);
 
-		//string fileName = year+month+date+".txt";
 		string fileName = ApplicationModel.currentLevel;
 		Debug.Log("FileName: " + fileName);
 

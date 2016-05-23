@@ -25,8 +25,6 @@ public class OpenDoor : MonoBehaviour {
 			#endif
 		}
 
-		//Debug.Log("Device: " + device);
-
 	}
 
 	void OnTriggerStay2D(Collider2D col) {

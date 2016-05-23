@@ -253,23 +253,9 @@ public class Player : MonoBehaviour {
 		}
 
 		if (isDead) {
-
-			/*if (Time.time - lastDeath < 3f) {
-				this.transform.localPosition = startingPosition;
-			} else {
-				this.transform.localPosition = cape[0];
-			}*/
-
-			//Debug.Log(deadQuestion?"I died before":"I didn’t die before");
-
 			if (!questionAsked) {
 				if (device == "UNITY_ANDROID") {
-					//askQuestion.showQuestion();
-					//if (askQuestion.correct) {
-					//	this.transform.localPosition = cape[0];
-					//} else {
-					//	this.transform.localPosition = startingPosition;
-					//}
+
 					askQuestion.done = false;
 					Debug.Log("Waiting for f()");
 					if (!deadQuestion) {

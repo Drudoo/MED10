@@ -7,7 +7,6 @@ public class ApplicationModel {
 
 	static public string username = "";
 
-	//Name, Game ID, Score, Right Answer, Coins, Boxes, Time
 
 	static public bool downloaded = true;
 
